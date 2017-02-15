@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin','admin\AdminController@index');
+// 用户模块控制器
+Route::controller('/admin/user','admin\UserController');
