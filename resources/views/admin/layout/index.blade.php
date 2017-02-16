@@ -275,7 +275,7 @@
                 {{ session('success') }}
             </div>
             @endif
-				@section('container')
+				@section('content')
                 @show
 			</div>
             <!-- Inner Container End -->
