@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 
 
@@ -221,3 +222,8 @@ Route::controller('/home/login','home\LoginController');
 
 
 
+=======
+Route::get('/admin','admin\AdminController@index');
+// 用户模块控制器
+Route::controller('/admin/user','admin\UserController');
+>>>>>>> 5c3f6112e7e785ce3162f28053352adae7a0a8b8

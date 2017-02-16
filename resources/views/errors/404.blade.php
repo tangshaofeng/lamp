@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD
         <title>404 not found.</title>
+=======
+        <title>Be right back.</title>
+>>>>>>> 5c3f6112e7e785ce3162f28053352adae7a0a8b8
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -40,7 +44,11 @@
     <body>
         <div class="container">
             <div class="content">
+<<<<<<< HEAD
                 <div class="title">404 not found.</div>
+=======
+                <div class="title">404 not found</div>
+>>>>>>> 5c3f6112e7e785ce3162f28053352adae7a0a8b8
             </div>
         </div>
     </body>
