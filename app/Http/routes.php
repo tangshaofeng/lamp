@@ -101,6 +101,10 @@ Route::controller('/admin/user','admin\UserController');
 
 
 
+//后台分类
+Route::controller('/admin/cate','admin\CateController');
+//后台商品管理
+Route::controller('/admin/goods','admin\GoodsController');
 
 
 
