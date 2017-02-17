@@ -1,6 +1,6 @@
 @extends('admin.layout.index')
 
-@section('container')
+@section('content')
 
 @if (count($errors) > 0)
     <div class="mws-form-message error">

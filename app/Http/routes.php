@@ -14,8 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
 
+Route::get('/admin','admin\AdminController@index');
+// 用户模块控制器
+Route::controller('/admin/user','admin\UserController');
 
 
 
@@ -207,6 +209,12 @@ Route::get('/code','CodeController@index');
 Route::controller('/home/home','home\ZhuyeController');
 //登录
 Route::controller('/home/login','home\LoginController');
+//网站配置
+Route::controller('/admin/web','admin\WebController');
+//订单
+Route::controller('/admin/dingdan','admin\DingdanController');
+//前台个人中心都交给infomation
+Route::controller('/home/infomation','home\InfomationController');
 
 
 
@@ -219,11 +227,3 @@ Route::controller('/home/login','home\LoginController');
 
 
 
-
-
-
-=======
-Route::get('/admin','admin\AdminController@index');
-// 用户模块控制器
-Route::controller('/admin/user','admin\UserController');
->>>>>>> 5c3f6112e7e785ce3162f28053352adae7a0a8b8

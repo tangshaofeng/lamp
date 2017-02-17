@@ -256,6 +256,19 @@
                             <li><a href="/admin/user/add">用户添加</a></li>
                         </ul>
                     </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-user"></i>配置管理</a>
+                        <ul>
+                            <li><a href="/admin/web/index">配置列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-user"></i> 订单管理</a>
+                        <ul>
+                            <li><a href="/admin/dingdan/index">订单列表</a></li>
+                            <!-- <li><a href="/admin/user/add">用户添加</a></li> -->
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -275,7 +288,7 @@
                 {{ session('success') }}
             </div>
             @endif
-				@section('container')
+				@section('content')
                 @show
 			</div>
             <!-- Inner Container End -->
