@@ -122,8 +122,10 @@ class InfomationController extends Controller
            return view('home.infomation.password',['id'=>$id]);
          }
 
-         public function postPasswords(){
-           
+         public function postPasswords(Request $request){
+            $data = $request->except(['_token','id']);
+            dd($data);
+           $res = DB::table('user')->where('id',$request->input('id'))->first();
          } 
 
     //订单管理
