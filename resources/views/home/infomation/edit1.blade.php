@@ -23,8 +23,8 @@
 				<hr>
 
 				<div  class="am-u-md-12 am-u-lg-8">
-					<form class="am-form am-form-horizontal" action="/home/infomation/update1/{{$data['id']}}" method="post">	{{ csrf_field() }}
-						
+					<form class="am-form am-form-horizontal" action="/home/infomation/update1" method="post">	{{ csrf_field() }}
+						<input type="hidden" name="id" value="{{$data['id']}}">
 						<div class="am-form-group">
 							<label class="am-form-label" for="user-name">收件人</label>
 							<div class="am-form-content">

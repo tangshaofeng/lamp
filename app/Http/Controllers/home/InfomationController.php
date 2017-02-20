@@ -105,7 +105,14 @@ class InfomationController extends Controller
            return view('home.infomation.edit1',['data'=>$data]);
         }
 
-         public function postUpdate($id){
+         public function postUpdate1(Request $request){
+            $arr = $request->except(['_token','id','x','y']);
+           $res= DB::table('add')->where('id',$request->only('id'))->update($arr);
+            if($res){
+                return view('home.infomation.index');
+            }else{
+                return back();
+            }
 
          }
 

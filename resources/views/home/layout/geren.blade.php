@@ -157,7 +157,7 @@
 						<a href="#">个人资料</a>
 						<ul>
 							<li class="active"> <a href="/home/infomation/index">个人信息</a></li>
-							<li> <a href="/home/infomation/safety">安全设置</a></li>
+							<li> <a href="/home/infomation/safety">修改密码</a></li>
 							<li> <a href="/home/infomation/address">收货地址</a></li>
 						</ul>
 					</li>
