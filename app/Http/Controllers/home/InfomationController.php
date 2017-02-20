@@ -117,7 +117,14 @@ class InfomationController extends Controller
          }
 
 
+         //密码更改
+         public function getPassword($id){
+           return view('home.infomation.password',['id'=>$id]);
+         }
 
+         public function postPasswords(){
+           
+         } 
 
     //订单管理
     public function getOrder(){
