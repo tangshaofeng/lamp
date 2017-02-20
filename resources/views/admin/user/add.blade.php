@@ -1,6 +1,6 @@
 @extends('admin.layout.index')
 
-@section('container')
+@section('content')
 
 @if (count($errors) > 0)
     <div class="mws-form-message error">
@@ -56,6 +56,7 @@
         					<select name="userqx">
         						<option value="管理员">管理员</option>
         						<option value="普通用户">普通用户</option>
+                                <option value="超级管理员">超级管理员</option>
         					</select>
         				</div>
         			</div>
