@@ -27,7 +27,7 @@
 						</div>
 					</div>
 					<form class="am-form am-form-horizontal" method="post" action="/home/infomation/passwords">
-					{{scrf_field()}}
+									{{ csrf_field() }}
 						<input type="hidden" name="id" value="{{ $id }}">
 						<div class="am-form-group">
 							<label class="am-form-label" for="user-old-password">原密码</label>

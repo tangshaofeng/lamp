@@ -123,9 +123,11 @@ class InfomationController extends Controller
          }
 
          public function postPasswords(Request $request){
-            $data = $request->except(['_token','id']);
-            dd($data);
-           $res = DB::table('user')->where('id',$request->input('id'))->first();
+            $data = $request->except(['_token','id','x','y']);
+            
+           $res = DB::table('user')->where('id','2085')->first();
+           dd($res);
+           // Hash::check($data['password'], $res['password']);
          } 
 
     //订单管理
