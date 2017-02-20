@@ -2,7 +2,7 @@
 @section('css')
 <link rel="stylesheet" href="/d/css/page_page.css">
 @endsection
-@section('content')
+@section('container')
 	<div class="mws-panel grid_8">
     	<div class="mws-panel-header">
         	<span><i class="icon-table"></i> 用户列表</span>
