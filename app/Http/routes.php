@@ -11,7 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
 
 
 
@@ -108,7 +107,7 @@ Route::controller('/admin/cate','admin\CateController');
 //轮播图
 Route::controller('/admin/lunbotu','admin\LunbotuController');
 //评论管理
-Route::controller('/home/comment','home\CommentController');
+// Route::controller('/home/comment','home\CommentController');
 
 
 
@@ -218,7 +217,6 @@ Route::controller('/home/comment','home\CommentController');
 
 
 Route::controller('/home/home','home\ZhuyeController');
-=======
 Route::get('/', function () {
     return view('welcome');
 });
@@ -233,4 +231,3 @@ Route::controller('/admin/goods','admin\GoodsController');
 Route::controller('/admin/cate','admin\CateController');
 //前台商品搜索页面控制器
 Route::controller('/home/search','home\SearchController');
->>>>>>> 81108adacfa1a97c92281fd48eef072bdc4fba00
