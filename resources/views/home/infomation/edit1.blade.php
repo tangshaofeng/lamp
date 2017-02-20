@@ -1,31 +1,39 @@
 @extends('home.layout.geren')
 
 @section('content')
-	<div class="clear"></div>
-		<a data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0}" class="new-abtn-type">添加新地址</a>
-		<!--例子-->
+	<div class="user-address">
+		<!--标题 -->
+		<div class="am-cf am-padding">
+			
+		</div>
+		<hr>
+		
+
+		
+		<div class="clear"></div>
+		
 		<div id="doc-modal-1" class="">
 
 			<div class="add-dress">
 
 				<!--标题 -->
 				<div class="am-cf am-padding">
-					<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">新增地址</strong> / <small>Add&nbsp;address</small></div>
+					<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">修改地址</strong> / <small>Add&nbsp;address</small></div>
 				</div>
 				<hr>
 
 				<div  class="am-u-md-12 am-u-lg-8">
-					<form class="am-form am-form-horizontal" action="/home/infomation/insert1" method="post">	{{ csrf_field() }}
+					<form class="am-form am-form-horizontal" action="/home/infomation/update1/{{$data['id']}}" method="post">	{{ csrf_field() }}
 						
 						<div class="am-form-group">
-							<label class="am-form-label" for="user-name">收货人</label>
+							<label class="am-form-label" for="user-name">收件人</label>
 							<div class="am-form-content">
-								<input type="text" placeholder="收货人" id="user-name" name="oname" value="{{ $data['oname']}}">
+								<input type="text" placeholder="收件人" id="user-name" name="oname" value="{{$data['oname']}}">
 							</div>
 						</div>
 
 						<div class="am-form-group">
-							<label class="am-form-label" for="user-phone">手机号码</label>
+							<label class="am-form-label" for="user-phone">收件人联系方式</label>
 							<div class="am-form-content">
 								<input type="text" placeholder="手机号必填" id="user-phone" name="ophone" value="{{ $data['ophone']}}">
 							</div>
@@ -43,7 +51,7 @@
 									
 
  -->								
-							 {!! include '/index.html'; !!}
+							{!! include '/index.html'; !!}
 			
 
 
@@ -73,4 +81,22 @@
 		</div>
 
 	</div>
+
+					<script type="text/javascript">
+						$(document).ready(function() {							
+							$(".new-option-r").click(function() {
+								$(this).parent('.user-addresslist').addClass("defaultAddr").siblings().removeClass("defaultAddr");
+							});
+							
+							var $ww = $(window).width();
+							if($ww&gt;640) {
+								$("#doc-modal-1").removeClass("am-modal am-modal-no-btn")
+							}
+							
+						})
+					</script>
+
+					<div class="clear"></div>
+
+				<!-- </div> -->
 @endsection

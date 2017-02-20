@@ -105,6 +105,10 @@ class InfomationController extends Controller
            return view('home.infomation.edit1',['data'=>$data]);
         }
 
+         public function postUpdate($id){
+
+         }
+
 
 
 
