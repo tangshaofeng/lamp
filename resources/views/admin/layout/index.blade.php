@@ -257,22 +257,29 @@
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="#"><i class="icon-user"></i>配置管理</a>
+                        <a href="#"><i class="icol32-wrench"></i>配置管理</a>
                         <ul>
                             <li><a href="/admin/web/index">配置列表</a></li>
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="#"><i class="icon-user"></i> 订单管理</a>
+                        <a href="#"><i class="icon-list-2"></i> 订单管理</a>
                         <ul>
                             <li><a href="/admin/dingdan/index">订单列表</a></li>
                             <!-- <li><a href="/admin/user/add">用户添加</a></li> -->
                         </ul>
                     </li>
                      <li class="active">
-                        <a href="#"><i class="icon-user"></i> 地址管理</a>
+                        <a href="#"><i class="icol32-building-link"></i> 地址管理</a>
                         <ul>
                             <li><a href="/admin/address/index">地址列表</a></li>
+                            <!-- <li><a href="/admin/user/add">用户添加</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="icol32-cart"></i> 购物车管理</a>
+                        <ul>
+                            <li><a href="/admin/car/index">购物车列表</a></li>
                             <!-- <li><a href="/admin/user/add">用户添加</a></li> -->
                         </ul>
                     </li>

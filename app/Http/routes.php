@@ -221,7 +221,8 @@ Route::controller('/admin/dingdan','admin\DingdanController');
 Route::controller('/home/infomation','home\InfomationController');
 //后台的地址管理
 Route::controller('/admin/address','admin\AddressController');
-
+//后台购物车管理
+Route::controller('/admin/car','admin\CarController');
 
 
 

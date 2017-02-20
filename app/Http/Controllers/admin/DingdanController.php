@@ -14,7 +14,7 @@ class DingdanController extends Controller
      $count = $request -> input('count',5);
         $search = $request -> input('search','');
         // 查询数据  并且分页
-        $data = DB::table('porder')->where('oname','like','%'.$search.'%')->paginate($count);
+        $data = DB::table('porder')->where('ostatus','like','%'.$search.'%')->paginate($count);
         return view('admin.dingdan.index',['data'=>$data,'request'=>$request->all()]);
     }
     public function getDelete($id){

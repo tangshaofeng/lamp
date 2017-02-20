@@ -39,22 +39,12 @@
         					</select>
         				</div>
         			</div>
+        			
+        			
         			<div class="mws-form-row">
-        				<label class="mws-form-label">订单地址</label>
+        				<label class="mws-form-label">商品的价格</label>
         				<div class="mws-form-item">
-        					<input class="small" type="text" name="oaddress" value="{{ $data['oaddress'] }}">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">订单联系方式</label>
-        				<div class="mws-form-item">
-        					<input class="small" type="text" name="ophone" value="{{ $data['ophone'] }}">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">订单收件人</label>
-        				<div class="mws-form-item">
-        					<input class="small" type="text" name="oname" value="{{ $data['oname'] }}">
+        					<input class="small" type="text" name="gprice" value="{{ $data['gprice'] }}">
         				</div>
         			</div>
         			<div class="mws-form-row">

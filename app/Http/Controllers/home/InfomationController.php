@@ -70,27 +70,28 @@ class InfomationController extends Controller
     } 
     //收货地址
     public function getAddress(){
-        $data = DB::table('porder')->where('uid',2085)->get();
-        return view('home.infomation.address',['data'=>$data]);
+        $dat = DB::table('add')->where('uid','2085')->get();
+        // $dat=$dat['0'];
+        return view('home.infomation.address',['dat'=>$dat]);
         
     }  
 
     public function postInsert1(Request $request){
         // dd($request ->all());
-        $data = $request->only(['province','country','town','sss']);
+        $arr = $request->only(['province','country','town','addr','oname','ophone']);
        
-        $arr= $request->only(['oname','ophone']);
-         $arr['oaddress'] =$data['province'].$data['country'].$data['town'].$data['sss'];
-         $re = DB::table('porder')->where('id','2')->update($arr);
+        
+       
+         $re = DB::table('add')->where('id','2')->update($arr);
         if($re){
                // $crr= DB::table('porder')
                //      ->join('user', 'user.id', '=', 'porder.uid')
                //      ->select('porder.*', 'ophone', 'oname','oaddress')
                //      ->get();
 
-               // // $crr = DB::table('porder')->where('uid','2085')->get();
-               // dd($crr);
-                return view('home.infomation.address',['data'=>$data,'crr'=>$crr]);
+               $data = DB::table('add')->where('uid','2085')->get();
+               
+                return view('home.infomation.address',['data'=>$data]);
             }else{
                 return back();
             }
@@ -98,7 +99,11 @@ class InfomationController extends Controller
 
 
         }
-
+        public function getEdit1($id){
+           $data = DB::table('add')->where('id',$id)->first();
+           // dd($data);
+           return view('home.infomation.edit1',['data'=>$data]);
+        }
 
 
 

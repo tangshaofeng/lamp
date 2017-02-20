@@ -1,4 +1,5 @@
-@extends('admin.layout.index');
+@extends('admin.layout.index')
+
 
 @section('content')
 	<div class="mws-panel grid_8">
@@ -24,10 +25,9 @@
                 <thead>
                     <tr role="row">
                     <th class="sorting_asc" style="width: 156px;">ID</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 212px;">收件人</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 133px;">联系电话</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">收件地址</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">用户留言</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 212px;">商品编号</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 133px;">购物数量</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">购物时间</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">操作</th>                    
                 </thead>
                 
@@ -35,13 +35,12 @@
             	@foreach($data as $k=>$v)
             	<tr class="odd">
                     <td class="sorting_1"style="text-align:center;">{{ $v['id'] }}</td>
-                    <td class="sorting" style="text-align:center;">{{ $v['oname'] }}</td>
-                    <td class="sorting"style="text-align:center;">{{ $v['ophone'] }}</td>
-                    <td class="sorting"style="text-align:center;">{{ $v['province'].$v['country'].$v['town'].$v['addr'] }}</td>
-                    <td class="sorting"style="text-align:center;">{{ $v['liuyan'] }}</td>
+                    <td class="sorting" style="text-align:center;">{{ $v['gid'] }}</td>
+                    <td class="sorting"style="text-align:center;">{{ $v['cnt'] }}</td>
+                    <td class="sorting"style="text-align:center;">{{ $v['ctime'] }}</td>
                     <td class="sorting"style="text-align:center;">
-                    	<a href="/admin/address/delete/{{$v['id']}}" style="color:black;font-size:20px;margin-left:20px;" title="删除"><i class="icon-trash"></i></a>
-                    	<a href="/admin/address/edit/{{$v['id']}}" style="color:black;font-size:20px;margin-left:20px;" title="修改"><i class="icon-pencil-2"></i></a>
+                    	<a href="/admin/car/delete/{{$v['id']}}" style="color:black;font-size:20px;margin-left:20px;" title="删除"><i class="icon-trash"></i></a>
+                    	<a href="/admin/car/edit/{{$v['id']}}" style="color:black;font-size:20px;margin-left:20px;" title="修改"><i class="icon-pencil-2"></i></a>
                     </td>
                 </tr>
                 @endforeach
@@ -66,6 +65,7 @@
         </div>
     </div>
 @endsection
+
 
 
 

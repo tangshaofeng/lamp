@@ -29,9 +29,7 @@
                     <th class="sorting_asc" style="width: 156px;">ID</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 212px;">订单号</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 133px;">订单状态</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">订单地址</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">联系方式</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">收货人</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">商品的价格</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">订单创建时间</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">操作</th>                    
                 </thead>
@@ -42,10 +40,9 @@
                     <td class="sorting_1"style="text-align:center;">{{ $v['id'] }}</td>
                     <td class="sorting" style="text-align:center;">{{ $v['ordernum'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['ostatus'] }}</td>
-                    <td class="sorting"style="text-align:center;">{{ $v['oaddress'] }}</td>
-                    <td class="sorting"style="text-align:center;">{{ $v['ophone'] }}</td>
-                    <td class="sorting"style="text-align:center;">{{ $v['oname'] }}</td>
+                    <td class="sorting"style="text-align:center;">{{ $v['gprice'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['otime'] }}</td>
+
                     <td class="sorting"style="text-align:center;">
                     	<a href="/admin/dingdan/delete/{{$v['id']}}" style="color:black;font-size:20px;margin-left:20px;" title="删除"><i class="icon-trash"></i></a>
                     	<a href="/admin/dingdan/edit/{{$v['id']}}" style="color:black;font-size:20px;margin-left:20px;" title="修改"><i class="icon-pencil-2"></i></a>
