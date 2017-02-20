@@ -83,8 +83,8 @@ class InfomationController extends Controller
          $arr['oaddress'] =$data['province'].$data['country'].$data['town'].$data['sss'];
          $re = DB::table('porder')->where('id','2')->update($arr);
         if($re){
-               // $crr= DB::table('user')
-               //      ->join('porder', '2085', '=', 'porder.uid')
+               // $crr= DB::table('porder')
+               //      ->join('user', 'user.id', '=', 'porder.uid')
                //      ->select('porder.*', 'ophone', 'oname','oaddress')
                //      ->get();
 

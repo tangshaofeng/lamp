@@ -269,6 +269,13 @@
                             <!-- <li><a href="/admin/user/add">用户添加</a></li> -->
                         </ul>
                     </li>
+                     <li class="active">
+                        <a href="#"><i class="icon-user"></i> 地址管理</a>
+                        <ul>
+                            <li><a href="/admin/address/index">地址列表</a></li>
+                            <!-- <li><a href="/admin/user/add">用户添加</a></li> -->
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -219,7 +219,8 @@ Route::controller('/admin/web','admin\WebController');
 Route::controller('/admin/dingdan','admin\DingdanController');
 //前台个人中心都交给infomation
 Route::controller('/home/infomation','home\InfomationController');
-
+//后台的地址管理
+Route::controller('/admin/address','admin\AddressController');
 
 
 
