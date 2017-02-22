@@ -25,18 +25,25 @@
 			<div class="am-container header">
 				<ul class="message-l">
 					<div class="topMessage">
+					@if(session('id'))
 						<div class="menu-hd">
+							<a href="/home/home/index" target="_top" class="h">欢迎{{session('phonenum') or session('email') }}</a>
+							<a href="/home/zhuce/paolu" target="_top">退出</a>
+						</div>
+					@else
+					<div class="menu-hd">
 							<a href="/home/login/index" target="_top" class="h">亲，请登录</a>
 							<a href="/home/zhuce/index" target="_top">免费注册</a>
-						</div>
+					</div>
+					@endif
 					</div>
 				</ul>
 				<ul class="message-r">
 					<div class="topMessage home">
-						<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+						<div class="menu-hd"><a href="/home/home/index" target="_top" class="h">商城首页</a></div>
 					</div>
 					<div class="topMessage my-shangcheng">
-						<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+						<div class="menu-hd MyShangcheng"><a href="/home/infomation/index" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 					</div>
 					<div class="topMessage mini-cart">
 						<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
@@ -105,7 +112,8 @@
 										<ul class="category-list" id="js_climit_li">
 											<li class="appliance js_toggle relative first">
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="/h/images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="/h/images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a>
+													</h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -692,7 +700,7 @@
 								</a></li>
 								<li class="title-first"><a target="_blank" href="#">
 									<span>[公告]</span>商城与广州市签署战略合作协议
-								     <img src="images/TJ.jpg"></img>
+								     <img src="/h/images/TJ.jpg"></img>
 								     <p>XXXXXXXXXXXXXXXXXX</p>
 							    </a></li>
 							    
@@ -2262,7 +2270,7 @@
 						<!--二维码 -->
 						<li class="qtitem ">
 							<a href="#none "><span class="mpbtn_qrcode "></span></a>
-							<div class="mp_qrcode " style="display:none; "><img src="images/weixin_code_145.png " /><i class="icon_arrow_white "></i></div>
+							<div class="mp_qrcode " style="display:none; "><img src="/h/images/weixin_code_145.png " /><i class="icon_arrow_white "></i></div>
 						</li>
 						<li class="qtitem ">
 							<a href="#top " class="return_top "><span class="top "></span></a>

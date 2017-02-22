@@ -70,7 +70,7 @@ class ZhuceController extends Controller
     // 接受激活时传过来的值
     $arr = $request->only(['id','usertoken']);
         //修改状态吗 
-    $arr['status'] = 2;
+    $arr['status'] = '2';
     // dd($arr);
 
     //根据ID和token值进行修改
@@ -174,16 +174,17 @@ class ZhuceController extends Controller
        
         ]);
       //数据的组装
-     
+     $s['phonenum']= $request->input('phonenum');
     $s['userpwd']= Hash::make($request -> input('userpwd'));
     $s['usertoken']= str_random(50);
     $s['usertime']=date('Y-m-d H:i:s',time());
     $s['status']= 2;
     //插入数据
+    
     $res = DB::table('user')->insert($s);
    if($res){
-         
-            return view('home.home.index');
+                
+            return view('home.login.index');
         }else{
             return back()->with('error','注册失败');
         }
