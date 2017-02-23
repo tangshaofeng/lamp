@@ -1,21 +1,10 @@
-@extends ('admin.layout.index')
-
-@section('title')
-	用户添加
-@endsection
+@extends('admin.layout.index')
 
 @section('content')
-<!-- {{ session('error')}} -->
-<!-- <div class="mws-form-message error">
-    <ul>
-    	<li>You are too fast</li>
-        <li>You are too slow</li>
-    </ul>
-</div> -->
 
-<!-- 自定义错误信息的显示方式 -->
 @if (count($errors) > 0)
     <div class="mws-form-message error">
+    	错误提醒
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -23,49 +12,70 @@
         </ul>
     </div>
 @endif
-
-<div class="mws-panel grid_8">
-	<div class="mws-panel-header">
-    	<span>用户添加</span>
+	<div class="mws-panel grid_8">
+    	<div class="mws-panel-header">
+        	<span>用户添加</span>
+        </div>
+        <div class="mws-panel-body no-padding">
+        	<form class="mws-form" action="/admin/user/insert" method="post" enctype="multipart/form-data">
+        	{{ csrf_field() }}
+        		<div class="mws-form-inline">
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">账号</label>
+        				<div class="mws-form-item">
+        					<input class="small" type="text" name="username" value="{{ old('username') }}">
+        				</div>
+        			</div>
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">密码</label>
+        				<div class="mws-form-item">
+        					<input class="small" type="password" name="userpwd" value="{{ old('userpwd') }}">
+        				</div>
+        			</div>
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">确认密码</label>
+        				<div class="mws-form-item">
+        					<input class="small" type="password" name="userpwds" value="{{ old('userpwds') }}">
+        				</div>
+        			</div>
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">头像</label>
+        				<div class="mws-form-item" style="width:250px;">
+        					<input type="file" name="userpic">
+        				</div>
+        			</div>
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">手机号</label>
+        				<div class="mws-form-item">
+        					<input class="small" type="text" name="phonenum" value="{{ old('phonenum') }}">
+        				</div>
+        			</div>
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">权限</label>
+        				<div class="mws-form-item">
+        					<select name="userqx">
+        						<option value="管理员">管理员</option>
+        						<option value="普通用户">普通用户</option>
+                                <option value="超级管理员">超级管理员</option>
+        					</select>
+        				</div>
+        			</div>
+        			<div class="mws-form-row">
+        				<label class="mws-form-label">性别</label>
+        				<div class="mws-form-item clearfix">
+        					<ul class="mws-form-list inline">
+        						<li><input type="radio" name="sex" value="男"> <label>男</label></li>
+        						<li><input type="radio" name="sex" value="女"> <label>女</label></li>
+        						<li><input type="radio" name="sex"value="保密"> <label>保密</label></li>
+        					</ul>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="mws-button-row">
+        			<input value="添加" class="btn btn-danger" type="submit">
+        			<input value="重置" class="btn " type="reset">
+        		</div>
+        	</form>
+        </div>    	
     </div>
-    <div class="mws-panel-body no-padding">
-    	<form class="mws-form" action="/admin/user/insert" method="post">
-    		{{ csrf_field() }}
-    		<div class="mws-form-inline">
-    			<div class="mws-form-row">
-    				<label class="mws-form-label">用户名</label>
-    				<div class="mws-form-item">
-    					<input type="text" class="username" name="username" placeholder="请输入用户名" style="width:300px">
-    				</div>
-    			</div>
-    			<div class="mws-form-row">
-    				<label class="mws-form-label">密码</label>
-    				<div class="mws-form-item">
-    					<input type="password" value="{{ old('password') }}" class="medium" name="password" placeholder="请输入密码" style="width:300px">
-    				</div>
-    			</div>
-    			<div class="mws-form-row">
-    				<label class="mws-form-label">确认密码</label>
-    				<div class="mws-form-item">
-    					<input type="password" class="large" name="repassword" placeholder="请输入确认密码" style="width:300px">
-    				</div>
-    			</div>
-    			<div class="mws-form-row">
-    				<label class="mws-form-label">性别</label>
-    				<div class="mws-form-item clearfix">
-    					<ul class="mws-form-list inline">
-    						<li><input type="radio" value="男" name="sex"> <label>男</label></li>
-    						<li><input type="radio" value="女" name="sex"> <label>女</label></li>
-    						<li><input type="radio" value="保密" name="sex"> <label>保密</label></li>
-    					</ul>
-    				</div>
-    			</div>
-    		</div>
-    		<div class="mws-button-row">
-    			<input type="submit" value="提交" class="btn btn-danger">
-    			<input type="reset" value="重置" class="btn ">
-    		</div>
-    	</form>
-    </div>    	
-</div>
 @endsection
