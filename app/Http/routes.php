@@ -107,7 +107,11 @@ Route::controller('/admin/cate','admin\CateController');
 //轮播图
 Route::controller('/admin/lunbotu','admin\LunbotuController');
 //评论管理
-// Route::controller('/home/comment','home\CommentController');
+Route::controller('/admin/comment','admin\CommentController');
+//回收站管理
+Route::controller('/admin/huishou','admin\HuishouController');
+//公告管理
+Route::controller('/admin/gonggao','admin\GonggaoController');
 
 
 

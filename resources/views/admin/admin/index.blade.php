@@ -1,4 +1,5 @@
-@extends('admin.layout.index')
+@extends ('admin.layout.index')
+
 @section('title')
-{{ Config::get('app.title') }}
+    {{ Config::get('app.title') }}
 @endsection

@@ -24,10 +24,10 @@
                                 <td style="width:200px;height:200px">
 	                                <ul class="thumbnails mws-gallery" style="text-align:left;float:left;">
 										<li border="1px solid red;">
-							            	<span class="thumbnail"><img src="/h/images/{{ $data['picone'] }}" alt=""></span>
+							            	<span class="thumbnail"><img src="/upload/image/{{ $data['picone'] }}" alt=""></span>
 							                <span class="mws-gallery-overlay">               
-							                    <a href="/admin/lunbotu/edit/{{$data['id']}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
-							                    <a href="/admin/lunbotu/delete/{{$data['id']}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
+							                    <a href="/admin/lunbotu/reedit/{{'picone'}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
+							                    <a href="/admin/lunbotu/delete/{{'picone'}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
 							                </span>
 										</li>
 										         			
@@ -36,10 +36,10 @@
                                  <td style="width:200px;height:200px">
 	                                <ul class="thumbnails mws-gallery" style="text-align:left;float:left;">
 										<li border="1px solid red;">
-							            	<span class="thumbnail"><img src="/h/images/{{ $data['pictwo'] }}" alt=""></span>
+							            	<span class="thumbnail"><img src="/upload/image/{{ $data['pictwo'] }}" alt=""></span>
 							                <span class="mws-gallery-overlay">               
-							                    <a href="/admin/lunbotu/edit/{{$data['id']}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
-							                    <a href="/admin/lunbotu/delete/{{$data['id']}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
+							                    <a href="/admin/lunbotu/reedit/{{'pictwo'}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
+							                    <a href="/admin/lunbotu/delete/{{'pictwo'}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
 							                </span>
 										</li>
 										         			
@@ -48,10 +48,10 @@
 								 <td style="width:200px;height:200px">
 	                                <ul class="thumbnails mws-gallery" style="text-align:left;float:left;">
 										<li border="1px solid red;">
-							            	<span class="thumbnail"><img src="/h/images/{{ $data['picthree'] }}" alt=""></span>
+							            	<span class="thumbnail"><img src="/upload/image/{{ $data['picthree'] }}" alt=""></span>
 							                <span class="mws-gallery-overlay">               
-							                    <a href="/admin/lunbotu/edit/{{$data['id']}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
-							                    <a href="/admin/lunbotu/delete/{{$data['id']}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
+							                    <a href="/admin/lunbotu/reedit/{{'picthree'}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
+							                    <a href="/admin/lunbotu/delete/{{'picthree'}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
 							                </span>
 										</li>
 										         			
@@ -60,10 +60,10 @@
 								 <td style="width:200px;height:200px">
 	                                <ul class="thumbnails mws-gallery" style="text-align:left;float:left;">
 										<li border="1px solid red;">
-							            	<span class="thumbnail"><img src="/h/images/{{ $data['picfour'] }}" alt=""></span>
+							            	<span class="thumbnail"><img src="/upload/image/{{ $data['picfour'] }}" alt=""></span>
 							                <span class="mws-gallery-overlay">               
-							                    <a href="/admin/lunbotu/edit/{{$data['id']}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
-							                    <a href="/admin/lunbotu/delete/{{$data['id']}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
+							                    <a href="/admin/lunbotu/reedit/{{'picfour'}}" class="mws-gallery-btn" title="这是修改"><i class="icon-pencil"></i></a>    
+							                    <a href="/admin/lunbotu/delete/{{'picfour'}}" class="mws-gallery-btn" title="这是删除"><i class="icon-trash"></i></a>    
 							                </span>
 										</li>
 									</ul>
