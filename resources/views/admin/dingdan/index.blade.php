@@ -30,6 +30,7 @@
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 212px;">订单号</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 133px;">订单状态</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">商品的价格</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">购买的数量</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">订单创建时间</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">操作</th>                    
                 </thead>
@@ -41,6 +42,7 @@
                     <td class="sorting" style="text-align:center;">{{ $v['ordernum'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['ostatus'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['gprice'] }}</td>
+                    <td class="sorting"style="text-align:center;">{{ $v['gnum'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['otime'] }}</td>
 
                     <td class="sorting"style="text-align:center;">
@@ -51,7 +53,7 @@
                 @endforeach
                 </tbody>
             </table>
-                <div class="dataTables_info" id="DataTables_Table_1_info">Showing 1 to 10 of 57 entries</div>
+                <div class="dataTables_info" id="DataTables_Table_1_info"></div>
                 <!-- <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
                 <a tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_1_first">First</a>
                 <a tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_1_previous">Previous</a>

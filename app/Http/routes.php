@@ -424,7 +424,8 @@ Route::controller('/admin/address','admin\AddressController');
 Route::controller('/admin/car','admin\CarController');
 //个人中心
 Route::controller('/home/infomation','home\InfomationController');
-
+//后台登录
+Route::controller('/admin/houtai','admin\HoutaiController');
 
 
 
