@@ -44,7 +44,7 @@
 						<div class="fore2"><small>为保证您购物安全，建议您定期更改密码以保护账户安全。</small></div>
 					</div>
 					<div class="fore3">
-						<a href="/home/infomation/password/{{1}}">
+						<a href="/home/infomation/password/{{7}}">
 							<div class="am-btn am-btn-secondary">修改</div>
 						</a>
 					</div>
@@ -56,24 +56,13 @@
 						<div class="fore2"><small>启用支付密码功能，为您资产账户安全加把锁。</small></div>
 					</div>
 					<div class="fore3">
-						<a href="setpay.html">
+						<a href="/home/infomation/setpay">
 							<div class="am-btn am-btn-secondary">立即启用</div>
 						</a>
 					</div>
 				</li>
 				
-				<li>
-					<i class="i-safety-mail"></i>
-					<div class="m-left">
-						<div class="fore1">邮箱验证</div>
-						<div class="fore2"><small>您验证的邮箱：5831XXX@qq.com 可用于快速找回登录密码</small></div>
-					</div>
-					<div class="fore3">
-						<a href="email.html">
-							<div class="am-btn am-btn-secondary">换绑</div>
-						</a>
-					</div>
-				</li>
+			
 				
 				
 			</ul>

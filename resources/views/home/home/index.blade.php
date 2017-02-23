@@ -25,18 +25,25 @@
 			<div class="am-container header">
 				<ul class="message-l">
 					<div class="topMessage">
+					@if(session('id'))
 						<div class="menu-hd">
+							<a href="/home/home/index" target="_top" class="h">欢迎{{session('phonenum') or session('email') }}</a>
+							<a href="/home/zhuce/paolu" target="_top">退出</a>
+						</div>
+					@else
+					<div class="menu-hd">
 							<a href="/home/login/index" target="_top" class="h">亲，请登录</a>
 							<a href="/home/zhuce/index" target="_top">免费注册</a>
-						</div>
+					</div>
+					@endif
 					</div>
 				</ul>
 				<ul class="message-r">
 					<div class="topMessage home">
-						<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+						<div class="menu-hd"><a href="/home/home/index" target="_top" class="h">商城首页</a></div>
 					</div>
 					<div class="topMessage my-shangcheng">
-						<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+						<div class="menu-hd MyShangcheng"><a href="/home/infomation/index" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 					</div>
 					<div class="topMessage mini-cart">
 						<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
@@ -106,7 +113,12 @@
 											@foreach($data as $k=>$v)
 											<li class="appliance js_toggle relative first">
 												<div class="category-info">
+<<<<<<< HEAD
 													<h3 class="category-name b-category-name"><i><img src="/h/images/cake.png"></i><a class="ml-22" title="点心">{{$v['name']}}</a></h3>
+=======
+													<h3 class="category-name b-category-name"><i><img src="/h/images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a>
+													</h3>
+>>>>>>> 797a3cdc6affec29093d35ea5b52a03a60284b80
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -200,8 +212,20 @@
 						
 
 							<ul>
+<<<<<<< HEAD
 								<span class="marqueen-title">商城头条</span>
 						<div class="demo">
+=======
+								<li class="title-first"><a target="_blank" href="#">
+									<img src="/h/images/TJ2.jpg"></img>
+									<span>[特惠]</span>商城爆品1分秒								
+								</a></li>
+								<li class="title-first"><a target="_blank" href="#">
+									<span>[公告]</span>商城与广州市签署战略合作协议
+								     <img src="/h/images/TJ.jpg"></img>
+								     <p>XXXXXXXXXXXXXXXXXX</p>
+							    </a></li>
+>>>>>>> 797a3cdc6affec29093d35ea5b52a03a60284b80
 							    
 						<div class="mod-vip">
 							<div class="m-baseinfo">
