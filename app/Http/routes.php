@@ -124,12 +124,12 @@ Route::controller('/admin/lunbotu','admin\LunbotuController');
 
 
 
-//评论管理
-Route::controller('/admin/comment','admin\CommentController');
-//回收站管理
-Route::controller('/admin/huishou','admin\HuishouController');
-//公告管理
-Route::controller('/admin/gonggao','admin\GonggaoController');
+// //评论管理
+// Route::controller('/admin/comment','admin\CommentController');
+// //回收站管理
+// Route::controller('/admin/huishou','admin\HuishouController');
+// //公告管理
+// Route::controller('/admin/gonggao','admin\GonggaoController');
 
 
 
