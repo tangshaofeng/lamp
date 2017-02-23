@@ -16,6 +16,14 @@
 		<link href="/h/css/dlstyle.css" rel="stylesheet" type="text/css">
 		<script src="/h/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="/h/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+
+		<link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" />
+		<link href="/h/css/cartstyle.css" rel="stylesheet" type="text/css" />
+
+		<link href="/h/css/jsstyle.css" rel="stylesheet" type="text/css" />
+
+		<script type="/h/text/javascript" src="js/address.js"></script>
 
 	</head>
 
@@ -68,9 +76,9 @@
 									</form>
                  
 								 <!-- <div class="login-links">
-								 										<label for="reader-me">
-								 											<input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
-								 										</label>
+	 										<label for="reader-me">
+	 											<input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
+	 										</label>
 								 							  	</div> -->
 										
 								</div>
@@ -172,7 +180,7 @@
 								
 									<hr>
 								</div>
-</form>
+										</form>
 								<script>
 									$(function() {
 									    $('#doc-my-tabs').tabs();
