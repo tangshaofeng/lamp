@@ -110,5 +110,10 @@ class WebController extends Controller
             return back()->with('error','配置修改失败,一旦点击修改就必须修改文字部分，否则会一直报错修改失败');
         }
     }
+
+    public function getTuichu(Request $request){
+        $request->session()->forget('res');
+        return view('admin.houtai.index');
+    }
     
 }

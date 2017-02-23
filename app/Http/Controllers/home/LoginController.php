@@ -26,15 +26,15 @@ class LoginController extends Controller
         // var_dump($name);
         $userpwd = $request -> input('userpwd');
         // var_dump($request ->all());
-        $res = DB::table('user')->where('phonenum',$name)->orWhere('email',$name) ->first();
+        $aaa = DB::table('user')->where('phonenum',$name)->orWhere('email',$name) ->first();
         // dd($res);
-        if($res['email'] || $res['phonenum']){
+        if($aaa['email'] || $aaa['phonenum']){
            // $res['userpwd']; 
-           if (!Hash::check($userpwd, $res['userpwd'])){
+           if (!Hash::check($userpwd, $aaa['userpwd'])){
                 return back()->with('error','用户名或密码错误');
            }else{
                 // $request ->session() ->push(['xxoo'=>'xxoo']);
-                session(['id'=>$res['id'],'phonenum'=>$res['phonenum'],'email'=>$res['email']]);
+                session(['aaa'=>$aaa]);
 
                 return view('home.home.index');
            }
