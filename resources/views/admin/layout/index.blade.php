@@ -201,12 +201,21 @@
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
+<<<<<<< HEAD
                         欢迎{{ session('res')['phonenum'] }}
                     </div>
                     <ul>
                         <li><a href="/admin/goods/index">商品</a></li>
                         <li><a href="/home/infomation/index">修改密码</a></li>
                         <li><a href="/admin/web/tuichu">退出</a></li>
+=======
+                        欢迎
+                    </div>
+                    <ul>
+                        <li><a href="/admin/goods/index">商品</a></li>
+                        <li><a href="/admin/user/index">修改密码</a></li>
+                        <li><a href="index.html">退出</a></li>
+>>>>>>> d22a15328fdc019e669af2dd16b979d13549546d
                     </ul>
                 </div>
             </div>

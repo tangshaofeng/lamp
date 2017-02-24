@@ -9,22 +9,35 @@
 
 		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
+		<link type="text/css" href="/h/css/optstyle.css" rel="stylesheet" />
+		<link type="text/css" href="/h/css/style.css" rel="stylesheet" />
+=======
 
+>>>>>>> b8466035544939aa9162a77568507367e5856988
 		<link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" />
 
 		<link href="/h/css/seastyle.css" rel="stylesheet" type="text/css" />
 		@section('css')
 
 		@show
+<<<<<<< HEAD
+		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="/h/js/script.js"></script>
+=======
+>>>>>>> b8466035544939aa9162a77568507367e5856988
 		<script type="text/javascript" src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
 		<script type="text/javascript" src="/h/js/jquery.imagezoom.min.js"></script>
 		<script type="text/javascript" src="/h/js/jquery.flexslider.js"></script>
 		<script type="text/javascript" src="/h/js/list.js"></script>
+<<<<<<< HEAD
+=======
 		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="/h/js/script.js"></script>
 		@section('script')
 
 		@show
+>>>>>>> b8466035544939aa9162a77568507367e5856988
 	</head>
 
 	<body>
@@ -33,6 +46,12 @@
 		<div class="am-container header">
 			<ul class="message-l">
 				<div class="topMessage">
+<<<<<<< HEAD
+					<div class="menu-hd">
+						<a href="#" target="_top" class="h">亲，请登录</a>
+						<a href="#" target="_top">免费注册</a>
+					</div>
+=======
 					@if(session('id'))
 					<div class="menu-hd">
 						<a href="/home/home/index" target="_top" class="h">欢迎{{session('phonenum') or session('email') }}</a>
@@ -44,6 +63,7 @@
 							<a href="/home/zhuce/index" target="_top">免费注册</a>
 					</div>
 					@endif
+>>>>>>> b8466035544939aa9162a77568507367e5856988
 				</div>
 			</ul>
 			<ul class="message-r">
