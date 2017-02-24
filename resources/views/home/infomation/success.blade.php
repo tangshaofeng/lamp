@@ -8,11 +8,11 @@
 
 	     <ul>
 
-	       <li>付款金额<em>{{$arr['gprice']*$arr['gnum']+10 }}</em></li>
+	       <li>付款金额<em>{{$arr['gprice']*$arr['gnum']+10 or '' }}</em></li>
 	       <div class="user-info">
-	         <p>收货人：{{$data['oname']}}</p>
-	         <p>联系电话：{{$data['ophone']}}</p>
-	         <p>收货地址：{{$data['province'].$data['country'].$data['town'].$data['addr']}}</p>
+	         <p>收货人：{{$data['oname'] or ''}}</p>
+	         <p>联系电话：{{$data['ophone'] or ''}}</p>
+	         <p>收货地址：{{$data['province'].$data['country'].$data['town'].$data['addr'] or ''}}</p>
 	       </div>
 	             请认真核对您的收货信息，如有错误请联系客服
 	                               

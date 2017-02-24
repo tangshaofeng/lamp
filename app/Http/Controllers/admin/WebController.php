@@ -72,45 +72,51 @@ class WebController extends Controller
         
     }
     public function postUpdate(Request $request){
-               // 表单自动验证
-        $this->validate($request, [
-        'webname' => 'required',
-        'keyword' => 'required',
-        'logo' => 'required',
-        'webstatus' => 'required'
-    ],[
-        'webname.required' => '网站名称未填写',
-        'logo.required' => '网站logo不能为空',
-        'keyword.required' => '网站关键字未填写',
-        'webstatus.required' => '网站描述未填写'
-    ]);
-       $arr = $request -> only(['webname','keyword','webstatus','webcontent']);
-        // dd($request->all());
-        if($request->hasFile('logo')){
-           
-            // 获取文件后缀
-            $hz = $request -> file('logo') ->getClientOriginalExtension();
-            // 拼接文件名
-            $name = 'logo'.'.'.$hz;
-            // 储存文件
-            $request->file('logo')->move('/d/images', $name);
-            $arr['logo'] = $name;
-         }else{
-            $arr['logo']='logo.png';
-         }
-         // var_dump($arr);
-        $res = DB::table('web')->where('id','=','1')->update($arr);
-        // dd($res);
-        if($res){
-             $dat = DB::table('web')->get();
-         
-             $data = $dat['0'];
-            return view('admin.web.index',['data'=>$data])->with('success','配置修改成功');
-        }else{
-            return back()->with('error','配置修改失败,一旦点击修改就必须修改文字部分，否则会一直报错修改失败');
+        if(session('res')['userqx'] = '超级管理员'){
+
+        
+                       // 表单自动验证
+                $this->validate($request, [
+                'webname' => 'required',
+                'keyword' => 'required',
+                'logo' => 'required',
+                'webstatus' => 'required'
+            ],[
+                'webname.required' => '网站名称未填写',
+                'logo.required' => '网站logo不能为空',
+                'keyword.required' => '网站关键字未填写',
+                'webstatus.required' => '网站描述未填写'
+            ]);
+               $arr = $request -> only(['webname','keyword','webstatus','webcontent']);
+                // dd($request->all());
+                if($request->hasFile('logo')){
+                   
+                    // 获取文件后缀
+                    $hz = $request -> file('logo') ->getClientOriginalExtension();
+                    // 拼接文件名
+                    $name = 'logo'.'.'.$hz;
+                    // 储存文件
+                    $request->file('logo')->move('/d/images', $name);
+                    $arr['logo'] = $name;
+                 }else{
+                    $arr['logo']='logo.png';
+                 }
+                 // var_dump($arr);
+                $res = DB::table('web')->where('id','=','1')->update($arr);
+                // dd($res);
+                if($res){
+                     $dat = DB::table('web')->get();
+                 
+                     $data = $dat['0'];
+                    return view('admin.web.index',['data'=>$data])->with('success','配置修改成功');
+                }else{
+                    return back()->with('error','配置修改失败,一旦点击修改就必须修改文字部分，否则会一直报错修改失败');
+                }
+            
+    }else{
+            return back()->with('error','对不起您的权限不够');
         }
     }
-
     public function getTuichu(Request $request){
         $request->session()->forget('res');
         return view('admin.houtai.index');

@@ -71,7 +71,7 @@ class InfomationController extends Controller
     } 
     //收货地址
     public function getAddress(){
-        $dat = DB::table('add')->where('uid','27')->get();
+        $dat = DB::table('add')->where('uid',session('aaa')['id'])->get();
         // $dat=$dat['0'];
         return view('home.infomation.address',['dat'=>$dat]);
         
@@ -111,12 +111,13 @@ class InfomationController extends Controller
 
 
         }
+        //地址修改
         public function getEdit1($id){
            $data = DB::table('add')->where('id',$id)->first();
            // dd($data);
            return view('home.infomation.edit1',['data'=>$data]);
         }
-
+        //地址修改
          public function postUpdate1(Request $request){
             $arr = $request->except(['_token','id','x','y']);
            $res= DB::table('add')->where('id',$request->only('id'))->update($arr);
@@ -294,7 +295,7 @@ class InfomationController extends Controller
     //订单管理
     public function getOrder(){
       // var_dump(session('id'));
-       $data =  DB::table('porder')->where('uid',27)->get();
+       $data =  DB::table('porder')->where('uid',session('aaa')['id'])->get();
        // var_dump($data);
 
         return view('home.infomation.order',['data'=>$data]);
@@ -347,14 +348,14 @@ class InfomationController extends Controller
     //退款售后
     public function getChange(){
       //查询的是用户的地址
-        $data = DB::table('add')->where('uid','27')->get();
-       $arr = DB::table('porder')->where('uid','27')->get();
+        $data = DB::table('add')->where('uid',session('aaa')['id'])->get();
+       $arr = DB::table('porder')->where('uid',session('aaa')['id'])->get();
         return view('home.infomation.change',['data'=>$data,'arr'=>$arr]);
     }  
       //退款的钱的去向
      public function getRecord($id){
-         $data = DB::table('add')->where('uid','27')->get();
-       $arr = DB::table('porder')->where('uid','27')->get();
+         $data = DB::table('add')->where('uid',session('aaa')['id'])->get();
+       $arr = DB::table('porder')->where('uid',session('aaa')['id'])->get();
         return view('home.infomation.record',['data'=>$data,'arr'=>$arr]);
      }
     //优惠券
@@ -369,9 +370,33 @@ class InfomationController extends Controller
     } 
     //账单明细
      public function getBill(){
-        
-        return view('home.infomation.bill');
-    }  
+       $data = DB::table('porder')->where('uid',27)->get();
+        return view('home.infomation.bill',['data'=>$data]);
+    } 
+
+    public function getAdd(Request $request){
+         // var_dump($request->all());
+            //商品的数量
+          $p['gnum'] =  $data['count'];
+          //商品的id
+        $p['gid'] = $data['gid'];
+        $p['uid'] = session('aaa')['id'];
+       $gg = DB::table('goods')->where('id',$p['gid'])->first();
+       $p['goodsname'] = $gg['goodsname'];
+       $p['gprice'] = $gg['gprice'];
+        $p['ginfo']= $gg['ginfo'];
+        $p['gpic'] = $gg['gpic'];
+        $p['ordernum']= '10000'.rand(1000,100000);
+        $p['ostatus'] = '待付款';
+        $p['otime'] = date('Y-m-d H:i:s',time());
+        $id = DB::table('porder')->insertGetId($p);
+        if($id > 0 ){
+            return view('home.infomation.pay',['id'=>$id]);
+        }else{
+            return back()->with('error','订单异常');
+        }
+        // echo $id;
+    } 
     //收藏
     public function getCollection(){
         

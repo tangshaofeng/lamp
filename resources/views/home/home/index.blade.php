@@ -25,9 +25,13 @@
 			<div class="am-container header">
 				<ul class="message-l">
 					<div class="topMessage">
-					@if(session('id'))
+					@if(session('aaa')['id'])
 						<div class="menu-hd">
-							<a href="/home/home/index" target="_top" class="h">欢迎{{session('phonenum') or session('email') }}</a>
+							if(session('aaa')['phonenum'])
+							<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['phonenum']}}</a>
+							@else
+							<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['email']}}</a>
+							@endif
 							<a href="/home/zhuce/paolu" target="_top">退出</a>
 						</div>
 					@else
