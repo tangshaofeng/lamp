@@ -1,5 +1,16 @@
 @extends('home.layout.geren')
+@section('css')
+	
+		<link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 
+		<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
+		<link href="/h/css/orstyle.css" rel="stylesheet" type="text/css">
+
+		<script src="/h/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+		<script src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
+
+@endsection
 @section('content')
 <!-- <div class="user-order"> -->
 
@@ -51,7 +62,7 @@
 										<div class="order-list">
 											
 											<!--交易成功-->@foreach($data as $k=>$v)
-											<div class="order-status5">
+											<!-- <div class="order-status5"> -->
 												<div class="order-title">
 													<div class="dd-num">订单编号：<a href="javascript:;">{{$v['ordernum'] }}</a></div>
 													<span>成交时间：{{$v['otime'] }}</span>
@@ -59,7 +70,7 @@
 												</div>
 												<div class="order-content">
 													<div class="order-left">
-														<ul class="item-list">
+														<ul class="item-list" style="width:966px;height:143px;">
 															<li class="td td-item">
 																<div class="item-pic">
 																	<a href="#" class="J_MakePoint">
@@ -67,7 +78,7 @@
 																	</a>
 																</div>
 																<div class="item-info">
-																	<div class="item-basic-info">
+																	<div class="item-basic-info" style="width:240px;height:20px;position:relative;top:-15px;">
 																		<a href="#">
 																			<p>{!!$v['ginfo']!!}</p>
 																			<p class="info-little">颜色：12#川南玛瑙
@@ -77,12 +88,12 @@
 																</div>
 															</li>
 															<li class="td td-price">
-																<div class="item-price">
+																<div class="item-price"  style="position: absolute;left:350px;top:50px;">
 																	{{$v['gprice'] }}
 																</div>
 															</li>
 															<li class="td td-number">
-																<div class="item-number">
+																<div class="item-number" style="position: relative;top:20px;">
 																	<span>×</span>{{$v['gnum'] }}
 																</div>
 															</li>
@@ -103,8 +114,8 @@
 															</div>
 														</li>
 														<div class="move-right">
-															<li class="td td-status">
-																<div class="item-status">
+															<li class="td td-status" style="position: relative;top:-10px;">
+																<div class="item-status" >
 																	<p class="Mystatus">{{$v['ostatus']}}</p>
 																	<p class="order-info"><a href="orderinfo.html">订单详情</a></p>
 																	<p class="order-info"><a href="logistics.html">查看物流</a></p>
@@ -117,7 +128,7 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											<!-- </div> -->
 											@endforeach
 											
 											
@@ -168,7 +179,7 @@
 												
 												<div class="order-content">
 													<div class="order-left">
-														<ul class="item-list">
+														<ul class="item-list" style="width:966px;height:143px;">
 															<li class="td td-item">
 																<div class="item-pic">
 																	<a class="J_MakePoint" href="#">
@@ -176,22 +187,22 @@
 																	</a>
 																</div>
 																<div class="item-info">
-																	<div class="item-basic-info">
+																	<div class="item-basic-info" style="width:240px;height:20px;position:relative;top:-15px;">
 																		<a href="#">
-																			<p>{{ $vv['ginfo']}}</p>
+																			<p>{!! $vv['ginfo']!!}</p>
 																			<p class="info-little">颜色：12#川南玛瑙
 																				<br>包装：正品包装 </p>
 																		</a>
 																	</div>
 																</div>
 															</li>
-															<li class="td td-price">
+															<li class="td td-price" style="position: absolute;left:300px;top:30px;">
 																<div class="item-price">
 																	{{$vv['gprice']}}
 																</div>
 															</li>
 															<li class="td td-number">
-																<div class="item-number">
+																<div class="item-number" style="position: relative;top:20px;">
 																	<span>×</span>{{$vv['gnum']}}
 																</div>
 															</li>
@@ -275,7 +286,7 @@
 												
 												<div class="order-content">
 													<div class="order-left">
-														<ul class="item-list">
+														<ul class="item-list" style="width:966px;height:143px;">
 															<li class="td td-item">
 																<div class="item-pic">
 																	<a class="J_MakePoint" href="#">
@@ -283,7 +294,7 @@
 																	</a>
 																</div>
 																<div class="item-info">
-																	<div class="item-basic-info">
+																	<div class="item-basic-info" style="width:240px;height:20px;position:relative;top:-15px;">
 																		<a href="#">
 																			<p>{!!$vvv['ginfo']!!}</p>
 																			<p class="info-little">颜色：12#川南玛瑙
@@ -292,13 +303,13 @@
 																	</div>
 																</div>
 															</li>
-															<li class="td td-price">
+															<li class="td td-price" style="position: absolute;left:300px;top:30px;">
 																<div class="item-price">
 																	{{$vvv['gprice'] }}
 																</div>
 															</li>
 															<li class="td td-number">
-																<div class="item-number">
+																<div class="item-number" style="position: relative;top:20px;">
 																	<span>×</span>{{$vvv['gnum'] }}
 																</div>
 															</li>
@@ -378,7 +389,7 @@
 												
 												<div class="order-content">
 													<div class="order-left">
-														<ul class="item-list">
+														<ul class="item-list" style="width:966px;height:143px;">
 															<li class="td td-item">
 																<div class="item-pic">
 																	<a class="J_MakePoint" href="#">
@@ -386,22 +397,22 @@
 																	</a>
 																</div>
 																<div class="item-info">
-																	<div class="item-basic-info">
+																	<div class="item-basic-info" style="width:240px;height:20px;position:relative;top:-15px;">
 																		<a href="#">
-																			<p>{!!$a['ginfo']!!}</p>
+																			<p>{!! $a['ginfo'] !!}</p>
 																			<p class="info-little">颜色：12#川南玛瑙
 																				<br>包装：裸装 </p>
 																		</a>
 																	</div>
 																</div>
 															</li>
-															<li class="td td-price">
+															<li class="td td-price" style="position: absolute;left:300px;top:30px;">
 																<div class="item-price">
 																	{{$a['gprice'] }}
 																</div>
 															</li>
 															<li class="td td-number">
-																<div class="item-number">
+																<div class="item-number" style="position: relative;top:20px;">
 																	<span>×</span>{{$a['gnum'] }}
 																</div>
 															</li>
@@ -480,7 +491,7 @@
 												
 												<div class="order-content">
 													<div class="order-left">
-														<ul class="item-list">
+														<ul class="item-list" style="width:966px;height:143px;">
 															<li class="td td-item">
 																<div class="item-pic">
 																	<a class="J_MakePoint" href="#">
@@ -488,7 +499,7 @@
 																	</a>
 																</div>
 																<div class="item-info">
-																	<div class="item-basic-info">
+																	<div class="item-basic-info" style="width:240px;height:20px;position:relative;top:-15px;">
 																		<a href="#">
 																			<p>{!!$z['ginfo']!!}</p>
 																			<p class="info-little">颜色：12#川南玛瑙
@@ -497,13 +508,13 @@
 																	</div>
 																</div>
 															</li>
-															<li class="td td-price">
+															<li class="td td-price" style="position: absolute;left:300px;top:30px;">
 																<div class="item-price">
 																	{{$z['gprice'] }}
 																</div>
 															</li>
 															<li class="td td-number">
-																<div class="item-number">
+																<div class="item-number" style="position: relative;top:20px;">
 																	<span>×</span>{{$z['gnum'] }}
 																</div>
 															</li>

@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-<<<<<<< HEAD
+
 use Hash;
-=======
->>>>>>> d22a15328fdc019e669af2dd16b979d13549546d
+
 class HoutaiController extends Controller
 {
 	public function getIndex(){
@@ -18,7 +17,7 @@ class HoutaiController extends Controller
 	}
 
 	public function postDenglu(Request $request){
-<<<<<<< HEAD
+
 		  if(session('code') != $request-> input('code')){
         return back()->withInput()->with('error','验证码错误');
     }
@@ -57,9 +56,9 @@ class HoutaiController extends Controller
 		}
 
 
-=======
+
 		echo 1;
 		dd($request->all());
->>>>>>> d22a15328fdc019e669af2dd16b979d13549546d
+
 	}
 }

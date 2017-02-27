@@ -23,6 +23,7 @@ class ZhuceController extends Controller
     if(session('code') != $request-> input('code')){
         return back()->withInput()->with('error','验证码错误');
     }
+
     if(strlen($request->input('userpwd')) < 6 || strlen($request->input('userpwd')) >18 ){
         return back()->withInput()->with('error','密码是6----18之间的数字和字母');
     }
@@ -156,6 +157,11 @@ class ZhuceController extends Controller
     if(session('phone_code') != $request ->input('code')){
         return back() ->withInput() ->with('error','验证错误');
     }
+
+    //  if(strlen($request->input('phonenum')) != 11){
+    //    return back()->with('error','手机号码不正确');
+    // }
+
      if(strlen($request->input('userpwd')) < 6 || strlen($request->input('userpwd')) >18 ){
         return back()->withInput()->with('error','密码是6----18之间的数字和字母');
     }
@@ -189,11 +195,39 @@ class ZhuceController extends Controller
             return back()->with('error','注册失败');
         }
    }
-   // public function ajax($name){
-   // $res = DB::table('user')->where('phonenum',$name)->first();
-   //  if($res){
-   //      echo '该用户已注册，请登录';
-   //  }
 
-   // }
+   //手机号的ajsx验证
+   public function getAjax(Request $request){
+      $phone= $request->input('name');
+       // echo $phone;
+       // dd();
+
+   $res = DB::table('user')->where('phonenum',$phone)->first();
+    if($res){
+        echo '该用户已注册，请登录';
+    }else{
+        echo '用户未注册，零食网欢迎您';
+    }
+
+
+   }
+   
+    public function postEmail(Request $request){
+      $email= $request->input('name');
+       // echo $phone;
+       // dd();
+   $res = DB::table('user')->where('email',$email)->first();
+    if($res){
+        echo '该用户已注册，请登录';
+    }else{
+        echo '用户未注册，零食网欢迎您';
+    }
+
+
+   }
+   
+   
+   
+   
+   
 }

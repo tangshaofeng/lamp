@@ -27,12 +27,11 @@
 					<div class="topMessage">
 					@if(session('aaa')['id'])
 						<div class="menu-hd">
-							if(session('aaa')['phonenum'])
-							<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['phonenum']}}</a>
-							@else
-							<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['email']}}</a>
-							@endif
+							@if(session('aaa')['phonenum'] or session('aaa')['email'])
+							<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['phonenum'] or session('aaa')['email'] }}</a>
+							
 							<a href="/home/zhuce/paolu" target="_top">退出</a>
+							@endif
 						</div>
 					@else
 					<div class="menu-hd">

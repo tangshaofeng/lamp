@@ -24,6 +24,7 @@
 		<link href="/h/css/jsstyle.css" rel="stylesheet" type="text/css" />
 
 		<script type="/h/text/javascript" src="js/address.js"></script>
+		<script type="/h/text/javascript" src="/jquery-1.8.3.min.js"></script>
 
 	</head>
 
@@ -43,7 +44,7 @@
 								<li class="am-active"><a href="">邮箱注册</a></li>
 								<li><a href="">手机号注册</a></li>
 							</ul>
-
+								
 							<div class="am-tabs-bd">
 								<div class="am-tab-panel am-active">
 									<form method="post" action="/home/zhuce/insert">
@@ -63,10 +64,12 @@
 										<div class="user-pass">
 											<img src="/code" alt="" title="点击刷新" onclick="this.src=this.src+'?a=1'">
 											<input type="text" name="code"  placeholder="验证码">
-										</div>	
-										<div class="am-cf" style="position:relative;top:25px;">
+										</div>
+										<a href="/home/login/index" style="position:relative;top:28px;">请登录</a>	<a href="/home/login/index" style="position:relative;top:28px;left:200px;">忘记密码</a>
+										<div class="am-cf" style="position:relative;top:10px;">
 											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>
+										
 										@if(session('error'))
 										<div class="am-cf" onclick="this.style.display='none'"style="position:relative;top:15px;">
 											<input type="text" name="" value="{{ session('error')}}" class="" style="color:red;">
@@ -127,25 +130,60 @@
 										}
 										document.getElementById('zphone').value = sTime;
 									}
-									// // 发送post方式
-									// $('input').eq(7).onfocus=function(){
-									//  // var xml= new XMLHttpRequest();
-									// }
-									// $('id=phone').eq(7).onblur=function(){
-									//  // var xml= new XMLHttpRequest();
-									// Ajax('HTML',false).post('/home/zhuce/ajax',{name:$('#phone').val()},function(str){
-									// 					alert(str);
-									// 				});
-
-									// }
-											
 									
-
-										
-									
-
 								</script>
 
+								<script>
+								$(function(){
+										$.ajaxSetup({
+									        headers: {
+									            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+									        }
+										});
+										$('#phone').blur(function(){
+										var	 phone =	$(this).val();
+ 											
+									    var pattern=/^1[3578][0123456789]\d{8}$/; 
+									    if(!pattern.test(phone)){ 
+									        return back()-with('error','手机号不正确'); 
+									    } 
+									   
+											
+
+										$.get('/home/zhuce/ajax',{name:phone },function(msg){
+											alert(msg);
+											});
+
+											// alert(phone)
+											
+										});
+
+											$('#email').blur(function(){
+											 email =	$(this).val();
+											
+											 var pattern=/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/; 
+											    if(!pattern.test(email)){ 
+											        return back()-with('error','邮箱不正确');  
+											    } 
+											  
+											
+																						// alert(phone)
+										
+											$.post('/home/zhuce/email',{name:email},function(nsg){
+												alert(nsg);		
+												});
+											});
+										// $.ajaxSetup({
+										// 	headers:{
+										// 		'X-CSRF-TOKEN':$('meta[name="csrf_token"]').attr('content')
+										// 	}
+										// });
+									
+									
+									
+
+								});
+								</script>
 
 								<div class="am-tab-panel">
 								<form method="post" action="/home/zhuce/insert2">
@@ -153,7 +191,7 @@
 									<div class="user-phone">
 										<label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
 										<input type="tel" name="phonenum" id="phone" placeholder="请输入手机号">
-									</div>																			
+ 										</div>																								<!--	<button id ="xxoo">点击</button>			 -->
 									<div class="verification">
 										<label for="code"><i class="am-icon-code-fork"></i></label>
 										<input type="tel" name="code" id="code" placeholder="请输入验证码">
@@ -174,6 +212,9 @@
 											<input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
 										</label>
 							  	</div> -->
+							  			
+											<a href="/home/login/index" style="position:relative;top:8px;">请登录</a>	<a href="/home/login/mima" style="position:relative;top:8px;left:200px;">忘记密码</a>
+										
 										<div class="am-cf">
 											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>

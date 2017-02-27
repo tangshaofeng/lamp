@@ -17,18 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin','admin\AdminController@index');
-// 用户模块控制器
-Route::controller('/admin/user','admin\UserController');
-// 友情链接控制器
-Route::controller('/admin/flink','admin\FlinkController');
-//商品管理控制器
-Route::controller('/admin/goods','admin\GoodsController');
-//分类管理控制器
-Route::controller('/admin/cate','admin\CateController');
-//前台商品搜索页面控制器
-Route::controller('/home/search','home\SearchController');
-//前台商品详情页面控制器
-Route::controller('/home/introduction','home\IntroductionController');
+
+
 
 
 
@@ -38,41 +28,46 @@ Route::controller('/admin/houtai','admin\HoutaiController');
 
 
 Route::group(['middleware' => 'as_admin'], function () {
-	   //网站配置
-	Route::controller('/admin/web','admin\WebController');
-	// 地址管理
-	Route::controller('/admin/dingdan','admin\DingdanController');
-	//地址
-	Route::controller('/admin/address','admin\AddressController');
-	// 购物车
-	Route::controller('/admin/car','admin\CarController');
+		   //网站配置
+		Route::controller('/admin/web','admin\WebController');
+		// 地址管理
+		Route::controller('/admin/dingdan','admin\DingdanController');
+		//地址
+		Route::controller('/admin/address','admin\AddressController');
+		// 购物车
+		// Route::controller('/admin/car','admin\CarController');
+
+
+		// 用户模块控制器
+		Route::controller('/admin/user','admin\UserController');
+		// 友情链接控制器
+		Route::controller('/admin/flink','admin\FlinkController');
+		//商品管理控制器
+		Route::controller('/admin/goods','admin\GoodsController');
+		
 
 
 
 
 
-
-
-
-	Route::get('/admin','admin\AdminController@index');
-	// 用户模块控制器
-	Route::controller('/admin/user','admin\UserController');
-	// 友情链接控制器
-	Route::controller('/admin/flink','admin\FlinkController');
-	//商品管理控制器
-	Route::controller('/admin/goods','admin\GoodsController');
-	//分类管理控制器
-	Route::controller('/admin/cate','admin\CateController');
-	//后台管理
-	Route::get('/admin','admin\AdminController@index');
-	//后台用户管理
-	Route::controller('/admin/user','admin\UserController');
-	//后台分类
-	// Route::controller('/admin/cate','admin\CateController');
-	//轮播图
-	Route::controller('/admin/lunbotu','admin\LunbotuController');
-	//评论管理
-	// Route::controller('/home/comment','home\CommentController');
+		Route::get('/admin','admin\AdminController@index');
+		// 用户模块控制器
+		Route::controller('/admin/user','admin\UserController');
+		// 友情链接控制器
+		Route::controller('/admin/flink','admin\FlinkController');
+		//商品管理控制器
+		Route::controller('/admin/goods','admin\GoodsController');
+		//分类管理控制器
+		Route::controller('/admin/cate','admin\CateController');
+		//后台管理
+		Route::get('/admin','admin\AdminController@index');
+		//后台用户管理
+		Route::controller('/admin/user','admin\UserController');
+		
+		//轮播图
+		Route::controller('/admin/lunbotu','admin\LunbotuController');
+		//评论管理
+		Route::controller('/home/comment','home\CommentController');
 
 	 
 });
@@ -105,7 +100,10 @@ Route::controller('/home/login','home\LoginController');
 Route::controller('/home/search','home\SearchController');
 
 
-
+//前台商品搜索页面控制器
+Route::controller('/home/search','home\SearchController');
+//前台商品详情页面控制器
+Route::controller('/home/introduction','home\IntroductionController');
 
 
 
@@ -126,9 +124,8 @@ Route::group(['middleware' => 'as_home'], function () {
 
 
 
-<<<<<<< HEAD
+
 });
-=======
 
 
 
@@ -163,30 +160,21 @@ Route::group(['middleware' => 'as_home'], function () {
 
 
 
-//后台管理
-Route::get('/admin','admin\AdminController@index');
 
-//后台分类
-Route::controller('/admin/cate','admin\CateController');
-//轮播图
-Route::controller('/admin/lunbotu','admin\LunbotuController');
-<<<<<<< HEAD
+// //后台管理
+// Route::get('/admin','admin\AdminController@index');
 
-=======
-//评论管理
-Route::controller('/admin/comment','admin\CommentController');
-//回收站管理
-Route::controller('/admin/huishou','admin\HuishouController');
-//公告管理
-Route::controller('/admin/gonggao','admin\GonggaoController');
->>>>>>> b8466035544939aa9162a77568507367e5856988
+// //后台分类
+// Route::controller('/admin/cate','admin\CateController');
+// //轮播图
+// Route::controller('/admin/lunbotu','admin\LunbotuController');
 
-
-
-
-
-
->>>>>>> d22a15328fdc019e669af2dd16b979d13549546d
+// //评论管理
+// Route::controller('/admin/comment','admin\CommentController');
+// //回收站管理
+// Route::controller('/admin/huishou','admin\HuishouController');
+// //公告管理
+// Route::controller('/admin/gonggao','admin\GonggaoController');
 
 
 
@@ -290,8 +278,7 @@ Route::controller('/admin/gonggao','admin\GonggaoController');
 
 
 Route::controller('/home/home','home\ZhuyeController');
-<<<<<<< HEAD
-=======
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -489,9 +476,6 @@ Route::controller('/home/infomation','home\InfomationController');
 
 
 
-
-
->>>>>>> b8466035544939aa9162a77568507367e5856988
 
 
 

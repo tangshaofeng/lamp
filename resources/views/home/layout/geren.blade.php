@@ -11,7 +11,6 @@
 		<link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
 		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 
-		<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
 		<link href="/h/css/addstyle.css" rel="stylesheet" type="text/css">
 		<script src="/h/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
 		<script src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
@@ -49,15 +48,8 @@
 
 		<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
 
-		<script src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
-		<link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
-		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 
-		<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
-		<link href="/h/css/orstyle.css" rel="stylesheet" type="text/css">
 
-		<script src="/h/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
-		<script src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
 		@section('css')
 
 		@show
@@ -146,7 +138,7 @@
 			<div class="col-main">
 				<div class="main-wrap">
 
-					<div class="user-info" style="border:0px solid white;">
+					<div class="user-info">
 						@section('content')
 
 						@show

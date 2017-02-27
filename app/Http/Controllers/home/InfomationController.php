@@ -295,7 +295,7 @@ class InfomationController extends Controller
     //订单管理
     public function getOrder(){
       // var_dump(session('id'));
-       $data =  DB::table('porder')->where('uid',session('aaa')['id'])->get();
+       $data =  DB::table('porder')->where('uid','28')->get();
        // var_dump($data);
 
         return view('home.infomation.order',['data'=>$data]);
