@@ -12,9 +12,12 @@
 		<link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" />
 		<link type="text/css" href="/h/css/optstyle.css" rel="stylesheet" />
 		<link type="text/css" href="/h/css/style.css" rel="stylesheet" />
-
+		<link href="css/personal.css" rel="stylesheet" type="text/css">
+		<link href="css/appstyle.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="/h/js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="/h/basic/js/quick_links.js"></script>
+		<script type="text/javascript" src="/h/js/jquery-1.7.2.min.js"></script>
 
 		<script type="text/javascript" src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
 		<script type="text/javascript" src="/h/js/jquery.imagezoom.min.js"></script>
@@ -141,11 +144,13 @@
 										<a href="#"><img src="/upload/image/{{ $data['gphoto'] }}" mid="/upload/image/{{ $data['gphoto'] }}" big="/upload/image/{{ $data['gphoto'] }}"></a>
 									</div>
 								</li>
+								@if($data['gphoto2'])
 								<li>
 									<div class="tb-pic tb-s40">
 										<a href="#"><img src="/upload/image/{{ $data['gphoto2'] }}" mid="/upload/image/{{ $data['gphoto2'] }}" big="/upload/image/{{ $data['gphoto2'] }}"></a>
 									</div>
 								</li>
+								@endif
 								@if($data['gphoto3'])
 								<li>
 									<div class="tb-pic tb-s40">
@@ -220,14 +225,14 @@
 											<a href="javascript:;" title="关闭" class="close">×</a>
 										</div>
 										<div class="theme-popbod dform">
-											<form class="theme-signin" name="loginform" action="" method="post">
-
+											<form class="theme-signin" name="loginform" action="/home/infomation/index" method="post">
+												{{csrf_field()}}
 												<div class="theme-signin-left">
 													<div class="theme-options">
 														<div class="cart-title number">数量</div>
 														<dd>
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
-															<input id="text_box" name="" type="text" value="1" style="width:30px;" />
+															<input id="text_box" name="numeric" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
 															<span id="Stock" class="tb-hidden">库存<span class="stock">{{ $data['kucun'] }}</span>件</span>
 														</dd>
@@ -286,24 +291,32 @@
 							
 							</div>
 							<li>
-								<div class="clearfix tb-btn tb-btn-buy theme-login">
-									<!-- <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a> -->
-									<input type="submit" value="立即购买" id="LikBuy" title="点此按钮到下一步确认购买信息">
+								<a href="/home/collection/index/{{$gid}}"><img src="/h/images/collection.png" alt="" style="margin-top:6px;"></a>
+							</li>
+							<li>
+								<div class="clearfix tb-btn tb-btn-buy theme-login" style="margin-left:10px">
+									<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/home/infomation/add">立即购买</a>
 								</div>
 							</li>
 							<li>
 								<div class="clearfix tb-btn tb-btn-basket theme-login">
-									<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+									<a id="LikBasket" title="加入购物车" href="/home/shopcar/add"><i></i>加入购物车</a>
 								</div>
 							</li>
 						</div>
-
+							
 					</div>
 					</form>
 					<div class="clear"></div>
 
 				</div>
-
+				<script>
+					setInterval(function(){
+						$('#LikBuy').html('<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/home/infomation/add?count='+$('#text_box').val()+'&gid='+{{ $data['id'] }}+'">立即购买</a>')
+						$('#LikBasket').html('<a id="LikBasket" title="加入购物车" href="/home/shopcar/add?count='+$('#text_box').val()+'&gid='+{{ $data['id'] }}+'"><i></i>加入购物车</a>')
+					},500);
+				
+				</script>
 
 				
 							
@@ -397,21 +410,28 @@
 									</div>
 									<div class="clear"></div>
 
-									<ul class="am-comments-list am-comments-list-flip">
+									
+									<!-- 评论内容遍历 -->
+										@foreach($comment as $k=>$v)
+										@foreach($user as $uk=>$uv)
+										@endforeach
+										<ul class="am-comments-list am-comments-list-flip">
 										<li class="am-comment">
 											<!-- 评论容器 -->
 											<a href="">
-												<img class="am-comment-avatar" src="images/hwbn40x40.jpg" />
+												<img class="am-comment-avatar" src="/h/images/hwbn40x40.jpg" />
 												<!-- 评论者头像 -->
 											</a>
 
 											<div class="am-comment-main">
-												<!-- 评论内容容器 -->
+												<!-- 评论内容容器 875px-->
 												<header class="am-comment-hd">
 													<!--<h3 class="am-comment-title">评论标题</h3>-->
+													
 													<div class="am-comment-meta">
+													
 														<!-- 评论元数据 -->
-														<a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
+														<a href="#link-to-user" class="am-comment-author">@if($uv['id'] == $v['uid']) {{$uv['username']}} @else 匿名 @endif</a>
 														<!-- 评论者 -->
 														评论于
 														<time datetime="">2015年11月02日 17:46</time>
@@ -420,17 +440,62 @@
 												<div class="am-comment-bd">
 													<div class="tb-rev-item " data-id="255776406962">
 														<div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-															摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
+															{!! $v['content'] !!} 
+															<a href="javascript:;" class="aa{{$v['id']}}" style="float:right"><img src="/h/images/replay.png" alt=""></a>
 														</div>
-														<div class="tb-r-act-bar">
+														<!-- <div class="tb-r-act-bar">
 															颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
+														</div> -->
+													</div>
+											
+												</div>
+												
+
+												@foreach($v['sub'] as $kk=>$vv)
+												<div style="">
+													<header class="am-comment-hd moren">
+														<!--<h3 class="am-comment-title">评论标题</h3>-->
+														<div class="am-comment-meta">
+															<!-- 评论元数据 -->
+															<a href="#link-to-user" class="am-comment-author">@if($uv['id'] == $vv['uid']) {{$uv['username']}} @else 匿名 @endif</a>:回复 <a href="#" class="am-comment-author">@if($uv['id'] == $v['uid']) {{$uv['username']}} @else 匿名 @endif</a>
+															<!-- 评论者 -->
+															评论于
+															<time datetime="">2015年11月02日 17:46</time>
+															<div class="am-comment-bd">
+																<div class="tb-rev-item " data-id="255776406962">
+																	<div class="J_TbcRate_ReviewContent tb-tbcr-content "  style="width:850px">
+																		{!! $vv['content'] !!}
+																	</div>
+																
+																</div>
+															</div>
+															
 														</div>
+													</header>
+													@endforeach
+													<!-- 评论内容 -->
+													<!-- 回复框 -->
+													<div style="height:28px;width:100%">
+														<form action="/home/introduction/replay" method="post">
+															{{ csrf_field() }}
+															<div style="">
+																<input type="hidden" value="{{$v['id']}}" name="pid">
+																<input type="hidden" value="{{$v['gid']}}" name="gid">
+																<input type="text" name="content" placeholder="&nbsp;&nbsp;&nbsp;请填写回复" style="float:left;height:28px;width:600px;border:1px solid #DEDEDE;border-radius:6px;margin-left:5px">
+																<input type="image" src="/h/images/submit.png">
+															</div>
+														</form>
 													</div>
 												</div>
-												<!-- 评论内容 -->
 											</div>
+
 										</li>
+										
 									</ul>
+									
+									@endforeach
+
+									
 									<div class="clear"></div>
 									<!--分页 -->
 									<ul class="am-pagination am-pagination-right">
