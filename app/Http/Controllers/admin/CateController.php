@@ -63,7 +63,7 @@ class CateController extends Controller
         }else{
             return back()->with('error','分类添加失败');
         }
-        dd($arr);
+        // dd($arr);
     }
 
     public function getIndex(Request $request){
@@ -73,9 +73,10 @@ class CateController extends Controller
         // $data = DB::table('cate')->where('name','like','%'.$search.'%')->paginate($count);
         // $data = DB::table('cate')->get();
 
-        // $data = self::getCatePid(0);
+        $data = self::getCatePid(0);
         // dd($data);
-        return view('admin.cate.index',['data'=>self::getCate()]);
+        // return view('admin.cate.index',['data'=>self::getCate()]);
+        return view('admin.cate.index',['data'=>$data]);
     }
 
     public function getDelete($id){

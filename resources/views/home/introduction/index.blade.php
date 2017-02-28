@@ -12,7 +12,7 @@
 		<link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" />
 		<link type="text/css" href="/h/css/optstyle.css" rel="stylesheet" />
 		<link type="text/css" href="/h/css/style.css" rel="stylesheet" />
-
+		<script type="text/javascript" src="/h/js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="/h/basic/js/quick_links.js"></script>
 
@@ -141,11 +141,13 @@
 										<a href="#"><img src="/upload/image/{{ $data['gphoto'] }}" mid="/upload/image/{{ $data['gphoto'] }}" big="/upload/image/{{ $data['gphoto'] }}"></a>
 									</div>
 								</li>
+								@if($data['gphoto2'])
 								<li>
 									<div class="tb-pic tb-s40">
 										<a href="#"><img src="/upload/image/{{ $data['gphoto2'] }}" mid="/upload/image/{{ $data['gphoto2'] }}" big="/upload/image/{{ $data['gphoto2'] }}"></a>
 									</div>
 								</li>
+								@endif
 								@if($data['gphoto3'])
 								<li>
 									<div class="tb-pic tb-s40">
@@ -220,14 +222,14 @@
 											<a href="javascript:;" title="关闭" class="close">×</a>
 										</div>
 										<div class="theme-popbod dform">
-											<form class="theme-signin" name="loginform" action="" method="post">
-
+											<form class="theme-signin" name="loginform" action="/home/infomation/index" method="post">
+												{{csrf_field()}}
 												<div class="theme-signin-left">
 													<div class="theme-options">
 														<div class="cart-title number">数量</div>
 														<dd>
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
-															<input id="text_box" name="" type="text" value="1" style="width:30px;" />
+															<input id="text_box" name="numeric" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
 															<span id="Stock" class="tb-hidden">库存<span class="stock">{{ $data['kucun'] }}</span>件</span>
 														</dd>
@@ -287,23 +289,28 @@
 							</div>
 							<li>
 								<div class="clearfix tb-btn tb-btn-buy theme-login">
-									<!-- <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a> -->
-									<input type="submit" value="立即购买" id="LikBuy" title="点此按钮到下一步确认购买信息">
+									<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/home/infomation/add">立即购买</a>
 								</div>
 							</li>
 							<li>
 								<div class="clearfix tb-btn tb-btn-basket theme-login">
-									<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+									<a id="LikBasket" title="加入购物车" href="/home/shopcar/add"><i></i>加入购物车</a>
 								</div>
 							</li>
 						</div>
-
+							
 					</div>
 					</form>
 					<div class="clear"></div>
 
 				</div>
-
+				<script>
+					setInterval(function(){
+						$('#LikBuy').html('<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/home/infomation/add?count='+$('#text_box').val()+'&gid='+{{ $data['id'] }}+'">立即购买</a>')
+						$('#LikBasket').html('<a id="LikBasket" title="加入购物车" href="/home/shopcar/add?count='+$('#text_box').val()+'&gid='+{{ $data['id'] }}+'&gmoney='+{{ $data['gmoney'] }}+'"><i></i>加入购物车</a>')
+					},500);
+				
+				</script>
 
 				
 							

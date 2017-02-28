@@ -8,10 +8,32 @@
 
 <!-- Viewport Metatag -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/d/plugins/colorpicker/colorpicker.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/custom-plugins/wizard/wizard.css" media="screen">
 
+<!-- Required Stylesheets -->
+<link rel="stylesheet" type="text/css" href="/d/bootstrap/css/bootstrap.min.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/css/fonts/ptsans/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/css/fonts/icomoon/style.css" media="screen">
+
+<link rel="stylesheet" type="text/css" href="/d/css/mws-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/css/icons/icol16.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/css/icons/icol32.css" media="screen">
+
+<!-- Demo Stylesheet -->
+<link rel="stylesheet" type="text/css" href="/d/css/demo.css" media="screen">
+
+<!-- jQuery-UI Stylesheet -->
+<link rel="stylesheet" type="text/css" href="/d/jui/css/jquery.ui.all.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/jui/jquery-ui.custom.css" media="screen">
+
+<!-- Theme Stylesheet -->
+<link rel="stylesheet" type="text/css" href="/d/css/mws-theme.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/d/css/themer.css" media="screen">
 <!-- Plugin Stylesheets first to ease overrides -->
 <link rel="stylesheet" type="text/css" href="/d/plugins/colorpicker/colorpicker.css" media="screen">
-
+    <link rel="stylesheet" type="text/css" href="/z/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/z/css/main.css"/>
 <!-- Required Stylesheets -->
 <link rel="stylesheet" type="text/css" href="/d/bootstrap/css/bootstrap.min.css" media="screen">
 <link rel="stylesheet" type="text/css" href="/d/css/fonts/ptsans/stylesheet.css" media="screen">
@@ -154,39 +176,8 @@
                                     </span>
                                 </a>
                             </li>
-                            <li class="read">
-                                <a href="#">
-                                    <span class="sender">John Doe</span>
-                                    <span class="message">
-                                        Lorem ipsum dolor sit amet
-                                    </span>
-                                    <span class="time">
-                                        January 21, 2012
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="unread">
-                                <a href="#">
-                                    <span class="sender">John Doe</span>
-                                    <span class="message">
-                                        Lorem ipsum dolor sit amet
-                                    </span>
-                                    <span class="time">
-                                        January 21, 2012
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="unread">
-                                <a href="#">
-                                    <span class="sender">John Doe</span>
-                                    <span class="message">
-                                        Lorem ipsum dolor sit amet
-                                    </span>
-                                    <span class="time">
-                                        January 21, 2012
-                                    </span>
-                                </a>
-                            </li>
+                            
+                           
                         </ul>
                         <div class="mws-dropdown-viewall">
                             <a href="#">View All Messages</a>
@@ -199,20 +190,28 @@
             <div id="mws-user-info" class="mws-inset">
             
                 <!-- User Photo -->
-                <div id="mws-user-photo">
-                    <img src="/d/example/profile.jpg" alt="User Photo">
+                <div id="mws-user-photo">                                          
+                @if(session('res')['userpic'])
+                    <img src="/upload/pic/{{session('res')['userpic'] }}" alt="User Photo">
+                @else
+                    <img src="/upload/pic/99f307c5014bff47de0c8eecf0c2ce58.png" alt="User Photo">
+                @endif
                 </div>
                 
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        欢迎
+
+                        欢迎{{ session('res')['phonenum'] }}
                     </div>
                     <ul>
                         <li><a href="/admin/goods/index">商品</a></li>
-                        <li><a href="/admin/user/index">修改密码</a></li>
-                        <li><a href="index.html">退出</a></li>
-                    </ul>
+                        <li><a href="/home/infomation/index">修改密码</a></li>
+                        <li><a href="/admin/web/tuichu">退出</a></li>
+
+                        
+                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -256,7 +255,7 @@
                     <li class="active">
                         <a href="#"><i class="icon-user"></i> 配置管理</a>
                         <ul>
-                            <li><a href="/admin/web/index">用户列表</a></li>
+                            <li><a href="/admin/web/index">配置列表</a></li>
                            
                         </ul>
                     </li> 

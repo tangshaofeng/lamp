@@ -27,10 +27,12 @@
                 <thead>
                     <tr role="row">
                     <th class="sorting_asc" style="width: 156px;">ID</th>
-                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 212px;">订单号</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 132px;">订单号</th> 
+                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 212px;">商品名称</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 133px;">订单状态</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">商品的价格</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">购买的数量</th>
+                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">商品描述</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">订单创建时间</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" style="width: 97px;">操作</th>                    
                 </thead>
@@ -39,10 +41,13 @@
             	@foreach($data as $k=>$v)
             	<tr class="odd">
                     <td class="sorting_1"style="text-align:center;">{{ $v['id'] }}</td>
-                    <td class="sorting" style="text-align:center;">{{ $v['ordernum'] }}</td>
+                     <td class="sorting" style="text-align:center;">{{ $v['ordernum'] }}</td>
+                    <td class="sorting_1"style="text-align:center;">{{ $v['goodsname'] }}</td>
+                   
                     <td class="sorting"style="text-align:center;">{{ $v['ostatus'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['gprice'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['gnum'] }}</td>
+                    <td class="sorting"style="text-align:center;">{{ $v['ginfo'] }}</td>
                     <td class="sorting"style="text-align:center;">{{ $v['otime'] }}</td>
 
                     <td class="sorting"style="text-align:center;">
