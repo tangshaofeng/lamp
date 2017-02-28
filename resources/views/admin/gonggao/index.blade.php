@@ -4,7 +4,7 @@
 
 	<div class="mws-panel grid_8">
     	<div class="mws-panel-header">
-        	<span><i class="icon-table"></i>分类列表</span>
+        	<span><i class="icon-table"></i>公告列表</span>
         </div>
         <div class="mws-panel-body no-padding">
             <table class="mws-table">
@@ -23,7 +23,7 @@
                                 <td>{{$v['goodsname']}}</td>
                                 <td>{{$v['content']}}</td>
                                 <td>
-                                	<a href="/admin/gonggao/delete/{{$v['id']}}">删除</a>
+                                	<a href="/admin/huishou/add/?id={{$v['id']}}&name=gonggao">删除</a>
                                 	<a href="/admin/gonggao/edit/{{$v['id']}}">修改</a>
                                 </td>
                             </tr>

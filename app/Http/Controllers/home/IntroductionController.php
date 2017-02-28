@@ -65,7 +65,7 @@ class IntroductionController extends Controller
    			$data = DB::table('goods')->where('id',$arr['gid'])->first();
    			$comment = self::getComment(0,$arr['gid']);
    			$user = DB::table('comment')->join('user',function($join){$join->on('comment.uid','=','user.id');})->select('comment.*','user.*')->get();
-   			return view('home.introduction.index',['gid'=>$id,'data'=>$data,'comment'=>$comment,'user'=>$user]);
+   			return view('home.introduction.index',['gid'=>$arr['gid'],'data'=>$data,'comment'=>$comment,'user'=>$user]);
    		}else{
    			return back();
    		}

@@ -399,8 +399,10 @@ class InfomationController extends Controller
     } 
     //收藏
     public function getCollection(){
+        $data = DB::table('collection')->join('goods',function($join){$join->on('goods.id','=','collection.gid');})->select('collection.*','goods.*')->get();;
         
-        return view('home.infomation.collection');
+        
+        return view('home.infomation.collection',['data'=>$data]);
     } 
     //评价
     public function getComment(){

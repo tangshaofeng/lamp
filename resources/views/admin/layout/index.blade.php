@@ -291,14 +291,26 @@
                         <a href="#"><i class="icon-list"></i>首页轮播图管理</a>
                         <ul>
                             <li><a href="/admin/lunbotu/index">轮播图列表</a></li>
-                            <li><a href="/admin/lunbotu/add">轮播图添加</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-business-card"></i>首页公告管理</a>
+                        <ul>
+                            <li><a href="/admin/gonggao/index">公告列表</a></li>
+                            <li><a href="/admin/gonggao/add">公告添加</a></li>
                         </ul>
                     </li>
                     <li class="active">
                         <a href="#"><i class="icon-list"></i>首页评论管理</a>
                         <ul>
-                            <li><a href="/home/comment/index">评论列表</a></li>
-                            <li><a href="/home/comment/add">评论添加</a></li>
+                            <li><a href="/admin/comment/index">评论列表</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-trash"></i>回收站管理</a>
+                        <ul>
+                            <li><a href="/admin/huishou/index">回收站列表</a></li>
                         </ul>
                     </li>
                 </ul>

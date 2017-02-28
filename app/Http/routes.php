@@ -27,7 +27,7 @@ Route::get('/admin','admin\AdminController@index');
 Route::controller('/admin/houtai','admin\HoutaiController');
 
 
-Route::group(['middleware' => 'as_admin'], function () {
+// Route::group(['middleware' => 'as_admin'], function () {
 		   //网站配置
 		Route::controller('/admin/web','admin\WebController');
 		// 地址管理
@@ -66,11 +66,16 @@ Route::group(['middleware' => 'as_admin'], function () {
 		
 		//轮播图
 		Route::controller('/admin/lunbotu','admin\LunbotuController');
+		//公告管理
+		Route::controller('/admin/gonggao','admin\GonggaoController');
 		//评论管理
-		Route::controller('/home/comment','home\CommentController');
+		// Route::controller('/home/comment','home\CommentController');
+		Route::controller('/admin/comment','admin\CommentController');
+		//回收站管理
+		Route::controller('/admin/huishou','admin\HuishouController');
 
 	 
-});
+// });
 
 
 

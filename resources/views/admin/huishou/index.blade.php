@@ -1,10 +1,12 @@
 @extends ('admin.layout.index')
 
 @section('content')
-
+@foreach($data as $k=>$v)
 <div class="mws-panel grid_8">
 	<div class="mws-panel-header">
-    	<span><i class="icon-table"></i>分类列表</span>
+    	<span><i class="icon-table">
+
+        </i>@if($k == 'comment') 评论 @else 公告 @endif回收列表</span>
     </div>
     <div class="mws-panel-body no-padding">
         <table class="mws-table">
@@ -12,23 +14,20 @@
                 <tr>
                     <th>评论ID</th>
                     <th>商品名称</th>
-                    <th>评论用户ID</th>
-                    <th>评论路径</th>
                     <th>评论内容</th>
                     <th>操作</th>
                 </tr>
             </thead>
-				@foreach ($data as $k=>$v)
+				@foreach ($v as $kk=>$vv)
                     <tbody>
                         <tr>
-                            <td>{{$v['id']}}</td>
-                            <td>{{$v['goodsname']}}</td>
-                            <td>{{$v['uid']}}</td>
-                            <td>{{$v['path']}}</td>
-                            <td>{{$v['content']}}</td>
+                            <td>{{$vv['id']}}</td>
+                            <td>{{$vv['goodsname']}}</td>
+                            
+                            <td>{{$vv['content']}}</td>
                             <td>
-                            	<a href="/admin/huishou/delete/{{$v['id']}}">删除</a>
-                            	<a href="/admin/huishou/recovery/{{$v['id']}}">还原</a>
+                            	<a href="/admin/huishou/delete/?id={{$vv['id']}}&name={{$k}}">删除</a>
+                            	<a href="/admin/huishou/recovery/?id={{$vv['id']}}&name={{$k}}">还原</a>
                             </td>
                         </tr>
                     </tbody>
@@ -36,5 +35,5 @@
         </table>
     </div>
 </div>
-
+@endforeach
 @endsection

@@ -4,7 +4,7 @@
 
 <div class="mws-panel grid_8">
                 	<div class="mws-panel-header">
-                    	<span><i class="icon-table"></i>分类列表</span>
+                    	<span><i class="icon-table"></i>评论列表</span>
                     </div>
                     <div class="mws-panel-body no-padding">
                         <table class="mws-table">
@@ -25,9 +25,9 @@
 		                                    <td>{{$v['uid']}}</td>
 		                                    <td>{!! $v['content']!!}</td>
 		                                    <td>
-		                                    	<a href="/admin/comment/delete/{{$v['id']}}">删除</a>
+		                                  
                                                 <a href="/admin/comment/edit/{{$v['id']}}">添加回复</a>
-		                                    	<a href="/admin/huishou/add/{{$v['id']}}">添加到回收站</a>
+		                                    	<a href="/admin/huishou/add/{{$v['id']}}">删除</a>
 		                                    </td>
 		                                </tr>
 		                            </tbody>

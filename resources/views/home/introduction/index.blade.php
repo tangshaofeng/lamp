@@ -441,7 +441,7 @@
 													<div class="tb-rev-item " data-id="255776406962">
 														<div class="J_TbcRate_ReviewContent tb-tbcr-content ">
 															{!! $v['content'] !!} 
-															<a href="javascript:;" class="aa{{$v['id']}}" style="float:right"><img src="/h/images/replay.png" alt=""></a>
+															<!--<a href="javascript:;" class="aa{{$v['id']}}" style="float:right"><img src="/h/images/replay.png" alt=""></a>-->
 														</div>
 														<!-- <div class="tb-r-act-bar">
 															颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
@@ -482,7 +482,7 @@
 																<input type="hidden" value="{{$v['id']}}" name="pid">
 																<input type="hidden" value="{{$v['gid']}}" name="gid">
 																<input type="text" name="content" placeholder="&nbsp;&nbsp;&nbsp;请填写回复" style="float:left;height:28px;width:600px;border:1px solid #DEDEDE;border-radius:6px;margin-left:5px">
-																<input type="image" src="/h/images/submit.png">
+																<input type="image" src="/h/images/replay.png">
 															</div>
 														</form>
 													</div>

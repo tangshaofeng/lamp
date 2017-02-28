@@ -41,6 +41,8 @@
 
 		<link href="/h/css/sustyle.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
+				<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
+		<link href="/h/css/colstyle.css" rel="stylesheet" type="text/css">
 
 
 

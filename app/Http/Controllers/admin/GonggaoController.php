@@ -11,7 +11,7 @@ class GonggaoController extends Controller
 {
     public function getIndex(){
         //从数据库中取出特惠信息和商品名称
-        $data = DB::table('gonggao')->join('goods',function($join){$join->on('gonggao.gid','=','goods.id');})->select('gonggao.*','goods.goodsname')->get();
+        $data = DB::table('gonggao')->join('goods',function($join){$join->on('gonggao.gid','=','goods.id')->where('gonggao.sign','=','1');})->select('gonggao.*','goods.goodsname')->get();
         return view('admin.gonggao.index',['data'=>$data]);
     }
 

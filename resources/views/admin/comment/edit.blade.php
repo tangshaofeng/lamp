@@ -25,9 +25,9 @@
                                 
                             </script>
                             <!-- 配置文件 -->
-                            <script type="text/javascript" src="/b/ueditor.config.js"></script>
+                            <script type="text/javascript" src="/u/ueditor.config.js"></script>
                             <!-- 编辑器源码文件 -->
-                            <script type="text/javascript" src="/b/ueditor.all.js"></script>
+                            <script type="text/javascript" src="/u/ueditor.all.js"></script>
                             <!-- 实例化编辑器 -->
                             <script type="text/javascript">
                                 var ue = UE.getEditor('content');
@@ -38,7 +38,7 @@
         		</div>
         		<div class="mws-button-row">
         			<input type="submit" value="提交" class="btn btn-danger">
-        			<input type="reset" value="cong" class="btn ">
+        			<input type="reset" value="重置" class="btn ">
         		</div>
         	</form>
         </div>
