@@ -73,6 +73,8 @@ Route::controller('/admin/houtai','admin\HoutaiController');
 		Route::controller('/admin/comment','admin\CommentController');
 		//回收站管理
 		Route::controller('/admin/huishou','admin\HuishouController');
+		
+
 
 	 
 // });
@@ -110,7 +112,8 @@ Route::controller('/home/search','home\SearchController');
 //前台商品详情页面控制器
 Route::controller('/home/introduction','home\IntroductionController');
 
-
+//商品收藏
+Route::controller('/home/collection','home\CollectionController');
 
 
 
@@ -283,6 +286,7 @@ Route::group(['middleware' => 'as_home'], function () {
 
 
 Route::controller('/home/home','home\ZhuyeController');
+Route::controller('/home/shopcar','home\ShopcarController');
 
 Route::get('/', function () {
     return view('welcome');

@@ -543,7 +543,7 @@
 															</li>
 															<li class="td td-change">
 																<div class="am-btn am-btn-danger anniu">
-																	评价商品</div>
+																	<a href="/home/infomation/comment/{{ $z['gid']}}">评价商品</a></div>
 															</li>
 														</div>
 													</div>

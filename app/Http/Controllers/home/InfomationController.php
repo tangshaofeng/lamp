@@ -405,9 +405,10 @@ class InfomationController extends Controller
         return view('home.infomation.collection',['data'=>$data]);
     } 
     //评价
-    public function getComment(){
-        
-        return view('home.infomation.comment');
+    public function getComment($gid){
+        $data = DB::table('goods')->where('id',$gid)->first();
+        // dd($data);
+        return view('home.infomation.comment',['data'=>$data]);
     }
 }
 

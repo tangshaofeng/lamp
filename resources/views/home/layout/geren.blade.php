@@ -140,7 +140,7 @@
 			<div class="col-main">
 				<div class="main-wrap">
 
-					<div class="user-info">
+					<div class="user-info" style="border:none">
 						@section('content')
 
 						@show

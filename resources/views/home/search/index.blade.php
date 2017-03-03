@@ -1,16 +1,30 @@
 @extends('home.layout.index')
-@section('css')
-<link rel="stylesheet" href="/h/css/page_page.css">
+
+@section('title')
+商品搜索页
 @endsection
+
+@section('css')
+		<!-- <link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" /> -->
+		<link href="/h/css/seastyle.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="/h/css/page_page.css">
+@endsection
+
+@section('script')
+		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="/h/js/script.js"></script>
+@endsection
+
 @section('contents')
 	<div class="am-g am-g-fixed">
 						<div class="am-u-sm-12 am-u-md-12">
 							<div class="search-content">
 								<div class="sort">
 									<li class="first"><a title="综合">综合排序</a></li>
-									<li><a title="销量">销量排序</a></li>
-									<li><a title="价格">价格优先</a></li>
-									<li class="big"><a title="评价" href="#">评价为主</a></li>
+									<li><a href="/home/search/index/{{ $id }}/xiaoliang" title="销量">销量排序</a></li>
+									<li><a href="/home/search/index/{{ $id }}/gmoney" title="价格">价格优先</a></li>
 								</div>
 								<div class="clear"></div>
 
@@ -25,7 +39,7 @@
 												<strong>{{ $v['gmoney'] }}</strong>
 											</p>
 											<p class="number fl">
-												销量<span>1110</span>
+												销量<span>{{ $v['xiaoliang'] }}</span>
 											</p>
 										</div></a>
 									</li>

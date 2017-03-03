@@ -225,7 +225,30 @@ class ZhuceController extends Controller
 
 
    }
-   
+
+   // static public function getCatePid($pid){
+   //      //遍历出所有分类及等级
+   //      $data = DB::table('cate')->where('pid',$pid)->get();
+   //      $arr = array();
+
+   //      foreach($data as $k=>$v){
+   //          $v['sub'] = self::getCatePid($v['id']);
+   //          $arr[] = $v;
+   //      }
+   //      return $arr;
+   //  }
+     
+   //前台退出登录
+   public function getPaolu(Request $request){
+      $request->session()->forget('aaa');
+
+       $lunbotu = DB::table('lunbotu')->get();
+    //遍历出所有分类及等级
+     $data= ZhuyeController::getCatePid(0);
+     $gonggao = DB::table('gonggao')->get();
+    $goods = DB::table('goods')->get();
+    return view('home/home/index',['lunbotu'=>$lunbotu,'data'=>$data,'gonggao'=>$gonggao,'goods'=>$goods]);
+   }
    
    
    

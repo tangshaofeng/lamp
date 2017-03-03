@@ -35,8 +35,14 @@ class LoginController extends Controller
            }else{
                 // $request ->session() ->push(['xxoo'=>'xxoo']);
                 session(['aaa'=>$aaa]);
-
-                return view('home.home.index');
+                //获取轮播图及商品分类
+                $lunbotu = DB::table('lunbotu')->get();
+                //遍历出所有分类及等级
+                $data= ZhuyeController::getCatePid(0);
+                $gonggao = DB::table('gonggao')->get();
+                $goods = DB::table('goods')->get();
+                return view('home/home/index',['lunbotu'=>$lunbotu,'data'=>$data,'gonggao'=>$gonggao,'goods'=>$goods]);
+                            // return view('home.home.index');
            }
 
         }else{

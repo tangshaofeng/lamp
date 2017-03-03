@@ -5,31 +5,24 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>搜索页面</title>
+		<title>
+			@section('title')
+
+			@show
+		</title>
 
 		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
-
-		<link type="text/css" href="/h/css/optstyle.css" rel="stylesheet" />
-		<link type="text/css" href="/h/css/style.css" rel="stylesheet" />
-
 		<link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" />
-
-		<link href="/h/css/seastyle.css" rel="stylesheet" type="text/css" />
+		<link href="/h/css/hmstyle.css" rel="stylesheet" type="text/css"/>
+		<link href="/h/css/skin.css" rel="stylesheet" type="text/css" />
+		
 		@section('css')
 
 		@show
-
-		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="/h/js/script.js"></script>
-
+		<script src="/h/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
-		<script type="text/javascript" src="/h/js/jquery.imagezoom.min.js"></script>
-		<script type="text/javascript" src="/h/js/jquery.flexslider.js"></script>
-		<script type="text/javascript" src="/h/js/list.js"></script>
-
-		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="/h/js/script.js"></script>
+		
 		@section('script')
 
 		@show
@@ -43,16 +36,31 @@
 			<ul class="message-l">
 				<div class="topMessage">
 
-					<div class="menu-hd">
+					<!-- <div class="menu-hd">
 						<a href="#" target="_top" class="h">亲，请登录</a>
 						<a href="#" target="_top">免费注册</a>
-					</div>
+					</div> -->
 
-					@if(session('id'))
+					<!-- @if(session('aaa')['id'])
 					<div class="menu-hd">
-						<a href="/home/home/index" target="_top" class="h">欢迎{{session('phonenum') or session('email') }}</a>
+						<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['phonenum'] or session('aaa')['email'] }}</a>
 						<a href="/home/zhuce/paolu" target="_top">退出</a>
 					</div>
+					@else
+					<div class="menu-hd">
+							<a href="/home/login/index" target="_top" class="h">亲，请登录</a>
+							<a href="/home/zhuce/index" target="_top">免费注册</a>
+					</div>
+					@endif -->
+					@if(session('aaa')['id'])
+						<div class="menu-hd">
+							@if(session('aaa')['phonenum'])	
+							<a href="/home/home/index" target="_top" class="h">欢迎{{session('aaa')['phonenum'] }}</a>
+							@else
+							<a href="/home/home/index" target="_top" class="h">欢迎{{ session('aaa')['email'] }}</a>
+							@endif
+							<a href="/home/zhuce/paolu" target="_top">退出</a>
+						</div>
 					@else
 					<div class="menu-hd">
 							<a href="/home/login/index" target="_top" class="h">亲，请登录</a>
@@ -64,16 +72,16 @@
 			</ul>
 			<ul class="message-r">
 				<div class="topMessage home">
-					<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+					<div class="menu-hd"><a href="/home/home/" target="_top" class="h">商城首页</a></div>
 				</div>
 				<div class="topMessage my-shangcheng">
-					<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+					<div class="menu-hd MyShangcheng"><a href="/home/infomation/" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 				</div>
 				<div class="topMessage mini-cart">
 					<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
 				</div>
 				<div class="topMessage favorite">
-					<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+					<div class="menu-hd"><a href="/home/infomation/collection" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
 			</ul>
 			</div>
 
@@ -82,7 +90,7 @@
 			<div class="nav white">
 				<div class="logo"><img src="/h/images/logo.png" /></div>
 				<div class="logoBig">
-					<li><img src="/h/images/logobig.png" /></li>
+					<li><a href="/home/home/"><img src="/d/images/logo.jpg" style="position: relative;left:-90px;"/></a></li>
 				</div>
 
 				<div class="search-bar pr">
@@ -94,28 +102,9 @@
 				</div>
 			</div>
 
-			<div class="clear"></div>
-			<b class="line"></b>
-           <div class="search">
-			<div class="search-list">
-			<div class="nav-table">
-					   <div class="long-title"><span class="all-goods">全部分类</span></div>
-					   <div class="nav-cont">
-							<ul>
-								<li class="index"><a href="#">首页</a></li>
-                                <li class="qc"><a href="#">闪购</a></li>
-                                <li class="qc"><a href="#">限时抢</a></li>
-                                <li class="qc"><a href="#">团购</a></li>
-                                <li class="qc last"><a href="#">大包装</a></li>
-							</ul>
-						    <div class="nav-extra">
-						    	<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
-						    	<i class="am-icon-angle-right" style="padding-left: 10px;"></i>
-						    </div>
-						</div>
-			</div>
 						@section('contents')
 						@show
+						<div class="clear"></div>
 					<div class="footer">
 						<div class="footer-hd">
 							<p>
@@ -204,7 +193,7 @@
 					</div>
 
 					<div id="brand" class="item">
-						<a href="#">
+						<a href="/home/infomation/collection">
 							<span class="wdsc"><img src="/h/images/wdsc.png" /></span>
 						</a>
 						<div class="mp_tooltip">
@@ -225,7 +214,7 @@
 
 					<div class="quick_toggle">
 						<li class="qtitem">
-							<a href="#"><span class="kfzx"></span></a>
+							<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=123456789&amp;site=qq&amp;menu=yes"><span class="kfzx"></span></a>
 							<div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
 						</li>
 						<!--二维码 -->

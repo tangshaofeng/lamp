@@ -49,7 +49,8 @@ class IntroductionController extends Controller
    		// dd($comment);
    		// $comment = DB::table('comment')->get();
    		$user = DB::table('comment')->join('user',function($join){$join->on('comment.uid','=','user.id');})->select('comment.*','user.*')->get();
-        
+        // dd($comment);
+		
         return view('home.introduction.index',['gid'=>$id,'data'=>$data,'comment'=>$comment,'user'=>$user]);
    }
 
@@ -69,5 +70,21 @@ class IntroductionController extends Controller
    		}else{
    			return back();
    		}
+   }
+
+   public function postAdd(Request $request,$id = ''){
+      // var_dump($gid);
+      $arr['content'] = $request->input('content');
+      $arr['ctime'] = time();
+      // dd($arr);
+      $res = DB::insert('insert into comment(uid,gid,ctime,pid,content) value(?,?,?,?,?)',[$session('aaa')['id'],$id,$arr['ctime'],'0',$arr['content']]);;
+      if($res){
+        $data = DB::table('goods')->where('id',$id)->first();
+        $comment = self::getComment(0,$id);
+        $user = DB::table('comment')->join('user',function($join){$join->on('comment.uid','=','user.id');})->select('comment.*','user.*')->get();
+        return view('home.introduction.index',['gid'=>$id,'data'=>$data,'comment'=>$comment,'user'=>$user]);
+      }else{
+        return back();
+      }
    }
 }

@@ -6,7 +6,7 @@
 	<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 	<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
 	<link href="/h/css/colstyle.css" rel="stylesheet" type="text/css">
-
+	<script type="text/javascript" src="/h/js/jquery-1.8.3.min.js"></script>
 <div class="user-collection">
 	<!--标题 -->
 	<div class="am-cf am-padding">
@@ -43,12 +43,14 @@
 						</div>
 					</div>
 					<div class="s-tp">
-						<span class="ui-btn-loading-before">找相似</span>
+						<span class="ui-btn-loading-before nocollection">
+							<a href="/home/collection/remove/{{$v['gid']}}" style="color:white;" class="remove">取消收藏</a>
+						</span>
 						<i class="am-icon-shopping-cart"></i>
 						<span class="ui-btn-loading-before buy">加入购物车</span>
-						<p>
+						<!--<p>
 							<a class="c-nodo J_delFav_btn" href="javascript:;">取消收藏</a>
-						</p>
+						</p>-->
 					</div>
 				</div>
 			</div>
@@ -56,11 +58,16 @@
 
 		</div>
 
-		
+	
 
 	</div>
 
 </div>
-
+<script>
+	// $('.remove').click(function(){
+	// 	alert(1);
+	// });
+	
+</script>
 <!-- </div> -->
 @endsection

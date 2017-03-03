@@ -1,131 +1,87 @@
 @extends('home.layout.geren')
 
 @section('content')
-	<div class="main-wrap">
+		<link href="/h/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="/h/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+		<link href="/h/css/personal.css" rel="stylesheet" type="text/css">
+		<link href="/h/css/appstyle.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="/h/js/jquery-1.7.2.min.js"></script>
+
+	<!--<div class="main-wrap">-->
 
 <div class="user-comment">
-	<!--标题 -->
-	<div class="am-cf am-padding">
-		<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">评价管理</strong> / <small>Manage&nbsp;Comment</small></div>
-	</div>
-	<hr>
+						<!--标题 -->
+						<div class="am-cf am-padding">
+							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">发表评论</strong> / <small>Make&nbsp;Comments</small></div>
+						</div>
+						<hr>
 
-	<div data-am-tabs="" class="am-tabs am-tabs-d2 am-margin">
-
-		<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
-			<li class="am-active"><a href="#tab1">所有评价</a></li>
-			<li><a href="#tab2">有图评价</a></li>
-
-		</ul>
-
-		<div class="am-tabs-bd">
-			<div id="tab1" class="am-tab-panel am-fade am-in am-active">
-
-				<div class="comment-main">
-					<div class="comment-list">
-						<ul class="item-list">
-
-							
-							<div class="comment-top">
-								<div class="th th-price">
-									评价
-								</div>
-								<div class="th th-item">
-									商品
-								</div>													
-							</div>
-							<li class="td td-item">
+						<div class="comment-main">
+							<div class="comment-list">
 								<div class="item-pic">
-									<a class="J_MakePoint" href="#">
-										<img class="itempic" src="/h/images/kouhong.jpg_80x80.jpg">
+									<a href="#" class="J_MakePoint">
+										<img src="/h/images/comment.jpg_400x400.jpg" class="itempic">
 									</a>
 								</div>
-							</li>
 
-							<li class="td td-comment">
-								<div class="item-title">
-									<div class="item-opinion">好评</div>
-									<div class="item-name">
+								<div class="item-title" style="">
+
+									<div class="item-name" style="margin:0;padding:0;border:0;font-size: 100%;font-size: 12px;font: inherit;vertical-align: baseline;font-family: arial,"Lantinghei SC","Microsoft Yahei";">
 										<a href="#">
-											<p class="item-basic-info">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
+											<p class="item-basic-info" style="height:18px;line-height:18px;overflow: hidden;font-size:14px;margin: 0;padding: 0;border: 0;    font: inherit;vertical-align: baseline;font-family: arial,"Lantinghei SC","Microsoft Yahei";">
+												{{$data['goodsname']}}
+											</p>
 										</a>
 									</div>
-								</div>
-								<div class="item-comment">
-									宝贝非常漂亮，超级喜欢！！！ 口红颜色很正呐，还有第两支半价，买三支免单一支的活动，下次还要来买。就是物流太慢了，还要我自己去取快递，店家不考虑换个物流么？
-								</div>
-
-								<div class="item-info">
-									<div>
-										<p class="info-little"><span>颜色：12#玛瑙</span> <span>包装：裸装</span> </p>
-										<p class="info-time">2015-12-24</p>
-
+									<div class="item-info" style="margin:0;padding: 0;border: 0;font-size: 100%;font-size: 12px;font: inherit;vertical-align: baseline;font-family: arial,"Lantinghei SC","Microsoft Yahei";">
+										<div class="info-little">
+											<!-- <span>颜色：洛阳牡丹</span>
+											<span>包装：裸装</span> -->
+										</div>
+										<div class="item-price">价格：<strong>{{$data['gmoney']}}</strong>
+										</div>					
 									</div>
 								</div>
-							</li>
+								<form action="/home/introduction/add/{{$data['id']}}}" enctype="multipart/form-data" method="post">
+								{{ csrf_field() }}
+								<div class="clear"></div>
 
-						</ul>
-
-					</div>
-				</div>
-
-			</div>
-			<div id="tab2" class="am-tab-panel am-fade">
-				
-				<div class="comment-main">
-					<div class="comment-list">
-						<ul class="item-list">
-							
-							
-							<div class="comment-top">
-								<div class="th th-price">
-									评价
+								<div class="item-comment">
+									<textarea name="content" placeholder="请写下对宝贝的感受吧，对他人帮助很大哦！"></textarea>
 								</div>
-								<div class="th th-item">
-									商品
-								</div>													
+								<div class="filePic">
+									<!-- <input  type="file" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*"> -->
+									<span>晒照片(0/5)</span>
+									<img src="images/image.jpg" alt="" name="commentpic">
+								</div>
+								<div class="item-opinion">
+									<li><i class="op1"></i>好评</li>
+									<li><i class="op2"></i>中评</li>
+									<li><i class="op3"></i>差评</li>
+								</div>
+								<div class="info-btn">
+									<input class="am-btn am-btn-danger" type="submit" value="发表评论">
+								</div>
 							</div>
-							<li class="td td-item">
-								<div class="item-pic">
-									<a class="J_MakePoint" href="#">
-										<img class="itempic" src="/h/images/kouhong.jpg_80x80.jpg">
-									</a>
-								</div>
-							</li>											
+							</form>
+														
+															
+					<script type="text/javascript">
+						$(document).ready(function() {
+							$(".comment-list .item-opinion li").click(function() {	
+								$(this).prevAll().children('i').removeClass("active");
+								$(this).nextAll().children('i').removeClass("active");
+								$(this).children('i').addClass("active");
+								
+							});
+				     })
+					</script>					
+					
+												
 							
-							<li class="td td-comment">
-								<div class="item-title">
-									<div class="item-opinion">好评</div>
-									<div class="item-name">
-										<a href="#">
-											<p class="item-basic-info">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
-										</a>
-									</div>
-								</div>
-								<div class="item-comment">
-									宝贝非常漂亮，超级喜欢！！！ 口红颜色很正呐，还有第两支半价，买三支免单一支的活动，下次还要来买。就是物流太慢了，还要我自己去取快递，店家不考虑换个物流么？
-								<div class="filePic"><img alt="" src="/h/images/image.jpg"></div>	
-								</div>
-
-								<div class="item-info">
-									<div>
-										<p class="info-little"><span>颜色：12#玛瑙</span> <span>包装：裸装</span> </p>
-										<p class="info-time">2015-12-24</p>
-
-									</div>
-								</div>
-							</li>
-
-						</ul>
+						</div>
 
 					</div>
-				</div>									
-				
-			</div>
-		</div>
-	</div>
 
-</div>
-
-</div>
+<!--</div>-->
 @endsection
