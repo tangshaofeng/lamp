@@ -9,21 +9,9 @@ use App\Http\Controllers\Controller;
 use DB;
 class IntroductionController extends Controller
 {
-	 static public function getComment($pid,$gid){
-        //遍历出所有分类及等级
-        $data = DB::table('comment')->where('pid',$pid)->where('gid',$gid)->orderBy('ctime','asc')->get();
-        $arr = array();
-
-        foreach($data as $k=>$v){
-            $v['sub'] = self::getComment($v['id'],$gid);
-            $arr[] = $v;
-        }
-        return $arr;
-    }
-
    public function getIndex($id){
-   		//接受传的商品id
         $data = DB::table('goods')->where('id',$id)->first();
+<<<<<<< HEAD
         // //从数据库中查询并排序数据
         // // $comment = DB::table('comment')->select(DB::raw("*,concat(path,',',id) as paths"))->where('gid',4)->orderBy('paths')->get();
         // // $comment = DB::table('comment')->join('goods',function($join){$join->on('comment.gid','=','goods.id')});
@@ -70,6 +58,10 @@ class IntroductionController extends Controller
    		}else{
    			return back();
    		}
+=======
+         //dd($data);
+        return view('home.introduction.index',['data'=>$data]);
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
    }
 
    public function postAdd(Request $request,$id = ''){

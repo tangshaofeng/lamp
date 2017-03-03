@@ -105,14 +105,21 @@
 							</div>
 							<div class="clear"></div>
 							<div class="bundle-main">
+<<<<<<< HEAD
 							<form action="/home/infomation/add" method="post">
 							{{ csrf_field() }}
+=======
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 							@foreach($data as $k=>$v)
 								<ul class="item-content clearfix">
 									<li class="td td-chk">
 										<div class="cart-checkbox ">
+<<<<<<< HEAD
 											<input class="check abcd" id="J_CheckBox_170037950254"  value="" type="checkbox">
 											<input type="hidden" name="{{ $v['id'] }}" />
+=======
+											<input class="check abcd" id="J_CheckBox_170037950254" name="xxoo[]" value="" type="checkbox">
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 											<label for="J_CheckBox_170037950254"></label>
 										</div>
 									</li>
@@ -147,7 +154,11 @@
 											<div class="item-amount ">
 												<div class="sl">
 													<!-- <a href="/home/shopcar/update1?gmoneys={{ $v['gmoneys'] }}&gmoney={{ $v['gmoney'] }}&id={{ $v['carid'] }}&count={{ $v['count'] }}"> --><input class="min am-btn jian" name="" type="button" value="-" /><!-- </a> -->
+<<<<<<< HEAD
 													<input class="text_box" name="" type="text" value="{{ $v['count'] }}" style="width:30px;" />
+=======
+													<input class="text_box" name="num" type="text" value="{{ $v['count'] }}" style="width:30px;" />
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 													<!-- <a href="/home/shopcar/update2?gmoneys={{ $v['gmoneys'] }}&gmoney={{ $v['gmoney'] }}&id={{ $v['carid'] }}&count={{ $v['count'] }}"> --><input class="add am-btn jia" name="" type="button" value="+" /><!-- </a> -->
 												</div>
 											</div>
@@ -198,6 +209,7 @@
 						}
 					</script>
 				</div>
+<<<<<<< HEAD
 				<div class="clear"></div>					
 				<div class="float-bar-wrapper">
 					
@@ -208,6 +220,16 @@
 						</div>
 						<span>全选</span>
 					
+=======
+				<div class="clear"></div>
+
+				<div class="float-bar-wrapper">
+					<div id="J_SelectAll2" class="select-all J_SelectAll">
+						<div class="cart-checkbox">
+							<input class="check-all check" id="J_SelectAllCbx2" name="select-all" value="全选" type="button">
+							<label for="J_SelectAllCbx2"></label>
+						</div>
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 						<!-- <span>全选</span> -->
 					</div>
 					<div class="operations">
@@ -225,6 +247,7 @@
 						</div>
 						<div class="price-sum">
 							<span class="txt">合计:</span>
+<<<<<<< HEAD
 							<strong class="price">¥<em id="J_Total">0.00</em></strong>
 						</div>
 						<div class="btn-area">
@@ -289,6 +312,32 @@
 								};
 							}
 					});
+=======
+							<strong class="price">¥<em id="J_Total"></em></strong>
+						</div>
+						<div class="btn-area">
+							<a href="pay.html" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
+								<span>结&nbsp;算</span></a>
+						</div>
+					</div>
+					<script>
+					for(var a = 0;a<$('.abcd').length;a++){
+						$('.abcd').eq(a).click(function(){
+							if($(this).attr('checked')){
+								
+								var jie  += $(this).parent().parent().next().next().next().next().next().find('.number').text();
+								alert(jie);
+							}
+						});
+							// if($(this).attr('checked')){
+							// 	var jie += $(this).parent().parent().next().next().next().next().next().find('.number').text();
+							// 	alert('1');
+							// 	// $('#J_Total').text()
+							// }
+						
+					}
+						
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 					</script>
 				</div>
 				

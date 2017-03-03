@@ -34,8 +34,7 @@ Route::controller('/admin/houtai','admin\HoutaiController');
 		Route::controller('/admin/dingdan','admin\DingdanController');
 		//地址
 		Route::controller('/admin/address','admin\AddressController');
-		// 购物车
-		// Route::controller('/admin/car','admin\CarController');
+		
 
 
 		// 用户模块控制器
@@ -127,7 +126,8 @@ Route::group(['middleware' => 'as_home'], function () {
 	Route::controller('/home/infomation','home\InfomationController');
 
 
-
+	// 前台购物车控制器
+	Route::controller('/home/shopcar','home\ShopcarController');
 
 
 
@@ -163,6 +163,21 @@ Route::group(['middleware' => 'as_home'], function () {
 
 
 
+
+
+//后台分类
+Route::controller('/admin/cate','admin\CateController');
+//轮播图
+Route::controller('/admin/lunbotu','admin\LunbotuController');
+
+
+
+// //评论管理
+// Route::controller('/admin/comment','admin\CommentController');
+// //回收站管理
+// Route::controller('/admin/huishou','admin\HuishouController');
+// //公告管理
+// Route::controller('/admin/gonggao','admin\GonggaoController');
 
 
 
@@ -288,9 +303,11 @@ Route::group(['middleware' => 'as_home'], function () {
 Route::controller('/home/home','home\ZhuyeController');
 Route::controller('/home/shopcar','home\ShopcarController');
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 
 

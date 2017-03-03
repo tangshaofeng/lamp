@@ -10,12 +10,20 @@
 		<!-- <link href="/h/basic/css/demo.css" rel="stylesheet" type="text/css" /> -->
 		<link type="text/css" href="/h/css/optstyle.css" rel="stylesheet" />
 		<link type="text/css" href="/h/css/style.css" rel="stylesheet" />
+<<<<<<< HEAD
 @endsection
 
 @section('script')
+=======
+		<script type="text/javascript" src="/h/js/jquery-1.8.3.min.js"></script>
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 		<script type="text/javascript" src="/h/basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="/h/basic/js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="/h/basic/js/quick_links.js"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 		<script type="text/javascript" src="/h/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
 		<script type="text/javascript" src="/h/js/jquery.imagezoom.min.js"></script>
 		<script type="text/javascript" src="/h/js/jquery.flexslider.js"></script>
@@ -218,6 +226,7 @@
 							</div>
 						</div>
 
+<<<<<<< HEAD
 					</dd>
 				</dl>
 				<div class="clear"></div>
@@ -227,6 +236,24 @@
 						<dt class="tb-metatit">店铺优惠</dt>
 						<div class="gold-list">
 							<p>购物满2件打8折，满3件7折<span>点击领券<i class="am-icon-sort-down"></i></span></p>
+=======
+						<div class="pay">
+							<div class="pay-opt">
+							<a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
+							<a><span class="am-icon-heart am-icon-fw">收藏</span></a>
+							
+							</div>
+							<li>
+								<div class="clearfix tb-btn tb-btn-buy theme-login">
+									<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/home/infomation/add">立即购买</a>
+								</div>
+							</li>
+							<li>
+								<div class="clearfix tb-btn tb-btn-basket theme-login">
+									<a id="LikBasket" title="加入购物车" href="/home/shopcar/add"><i></i>加入购物车</a>
+								</div>
+							</li>
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -241,7 +268,17 @@
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
 			</div>
+=======
+				<script>
+					setInterval(function(){
+						$('#LikBuy').html('<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/home/infomation/add?count='+$('#text_box').val()+'&gid='+{{ $data['id'] }}+'">立即购买</a>')
+						$('#LikBasket').html('<a id="LikBasket" title="加入购物车" href="/home/shopcar/add?count='+$('#text_box').val()+'&gid='+{{ $data['id'] }}+'&gmoney='+{{ $data['gmoney'] }}+'"><i></i>加入购物车</a>')
+					},500);
+				
+				</script>
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 
 			<div class="pay">
 				<div class="pay-opt">
@@ -393,6 +430,7 @@
 						</div>
 						<div class="clear"></div>
 
+<<<<<<< HEAD
 						
 						<!-- 评论内容遍历 -->
 							@foreach($comment as $k=>$v)
@@ -469,6 +507,70 @@
 													<input type="hidden" value="{{$v['gid']}}" name="gid">
 													<input type="text" name="content" placeholder="&nbsp;&nbsp;&nbsp;请填写回复" style="float:left;height:28px;width:600px;border:1px solid #DEDEDE;border-radius:6px;margin-left:5px">
 													<input type="image" src="/h/images/replay.png">
+=======
+									<ul class="am-comments-list am-comments-list-flip">
+										<li class="am-comment">
+											<!-- 评论容器 -->
+											<a href="">
+												<img class="am-comment-avatar" src="images/hwbn40x40.jpg" />
+												<!-- 评论者头像 -->
+											</a>
+
+											<div class="am-comment-main">
+												<!-- 评论内容容器 -->
+												<header class="am-comment-hd">
+													<!--<h3 class="am-comment-title">评论标题</h3>-->
+													<div class="am-comment-meta">
+														<!-- 评论元数据 -->
+														<a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
+														<!-- 评论者 -->
+														评论于
+														<time datetime="">2015年11月02日 17:46</time>
+													</div>
+												</header>
+												<div class="am-comment-bd">
+													<div class="tb-rev-item " data-id="255776406962">
+														<div class="J_TbcRate_ReviewContent tb-tbcr-content ">
+															摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
+														</div>
+														<div class="tb-r-act-bar">
+															颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
+														</div>
+													</div>
+												</div>
+												<!-- 评论内容 -->
+											</div>
+										</li>
+									</ul>
+									<div class="clear"></div>
+									<!--分页 -->
+									<ul class="am-pagination am-pagination-right">
+										<li class="am-disabled"><a href="#">&laquo;</a></li>
+										<li class="am-active"><a href="#">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">5</a></li>
+										<li><a href="#">&raquo;</a></li>
+									</ul>
+									<div class="clear"></div>
+									<div class="tb-reviewsft">
+										<div class="tb-rate-alert type-attention">购买前请查看该商品的 <a href="#" target="_blank">购物保障</a>，明确您的售后保障权益。</div>
+									</div>
+								</div>
+								<div class="am-tab-panel am-fade">
+									<div class="like">
+										<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
+											<li>
+												<div class="i-pic limit">
+													<img src="/h/images/imgsearch1.jpg" />
+													<p>【良品铺子_开口松子】零食坚果特产炒货
+														<span>东北红松子奶油味</span></p>
+													<p class="price fl">
+														<b>¥</b>
+														<strong>298.00</strong>
+													</p>
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
 												</div>
 											</form>
 										</div>

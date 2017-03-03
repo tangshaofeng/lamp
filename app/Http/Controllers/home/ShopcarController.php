@@ -11,11 +11,14 @@ class ShopcarController extends Controller
 {
     public function getAdd(Request $request){
         $data = $request->all();
+<<<<<<< HEAD
 
         $a = DB::table('car')->where('gid',$data['gid'])->first();
         if(!empty($a)){
             return back()  -> with('error','此商品已添加至购物车');
         }
+=======
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
         //数据组装
         $arr['count'] = $data['count'];
         $arr['gid'] = $data['gid'];
@@ -23,6 +26,7 @@ class ShopcarController extends Controller
         $arr['gmoneys'] = $data['gmoney']*$data['count'];
         $res = DB::table('car') -> insert($arr); 
         if($res){
+<<<<<<< HEAD
             return back() -> with('success','添加至购物车成功');
          }else{
             return back() -> with('error','添加失败');
@@ -31,6 +35,16 @@ class ShopcarController extends Controller
     public function getIndex(Request $request){
         $search = $request -> input('search','');
         $data = DB::table('car')->join('goods','car.gid','=','goods.id')->select('car.count','car.gmoneys','car.carid','goods.*')->where('uid',$session('aaa')['id'])->get();
+=======
+            return back() -> with('添加成功');
+         }else{
+            return back() -> with('添加失败');
+         };
+    }
+    public function getIndex(Request $request){
+        $search = $request -> input('search','');
+        $data = DB::table('car')->join('goods','car.gid','=','goods.id')->select('car.count','car.gmoneys','car.carid','goods.*')->where('uid','1')->get();
+>>>>>>> 1dbadd43b516494b2038fe61e11955d6fe41508a
         $jiage = null;
         $shuliang = null;
         foreach ($data as $k => $v){
